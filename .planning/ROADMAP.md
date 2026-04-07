@@ -12,7 +12,7 @@ diligent is built in strict dependency order: the state layer must exist before 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Models, state layer, atomic writes, CLI scaffold, and `diligent init`
+- [x] **Phase 1: Foundation** - Models, state layer, atomic writes, CLI scaffold, and `diligent init` (completed 2026-04-07)
 - [ ] **Phase 2: Sources and Truth** - Source document registry and the core fact management loop with verification gate
 - [ ] **Phase 3: Artifacts and Reconciliation** - Deliverable tracking and the dependency-graph staleness engine
 - [ ] **Phase 4: Workstreams, Tasks, and Questions** - Organizational layer for structuring deal work
@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `diligent doctor` detects and reports corruption in any state file with actionable fix suggestions
   4. File writes survive simulated crash (atomic write with OneDrive retry) and never leave partial state on disk
   5. CLI starts in under 200ms; all commands support --json output; no interactive prompts break agent tool-use
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [x] 01-01-PLAN.md -- Package scaffold, typed models, atomic write utility, LazyGroup CLI
@@ -113,7 +113,7 @@ Phase 5 requires both Phase 3 and Phase 4.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete   | 2026-04-07 |
 | 2. Sources and Truth | 0/3 | Not started | - |
 | 3. Artifacts and Reconciliation | 0/2 | Not started | - |
 | 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |

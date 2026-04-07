@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Initialization
 
-- [ ] **INIT-01**: `diligent init` scaffolds `.diligence/` directory with all 6 core state files (DEAL.md, TRUTH.md, SOURCES.md, WORKSTREAMS.md, STATE.md, config.json) from templates
+- [x] **INIT-01**: `diligent init` scaffolds `.diligence/` directory with all 6 core state files (DEAL.md, TRUTH.md, SOURCES.md, WORKSTREAMS.md, STATE.md, config.json) from templates
 - [x] **INIT-02**: State file readers/writers round-trip all 6 core files without data loss or format drift
-- [ ] **INIT-03**: `diligent doctor` validates file integrity across all state files, detects corruption, reports issues with suggested fixes
-- [ ] **INIT-04**: `diligent config get/set` reads and writes config.json values from CLI (low priority; cut first if Phase 1 runs long)
+- [x] **INIT-03**: `diligent doctor` validates file integrity across all state files, detects corruption, reports issues with suggested fixes
+- [x] **INIT-04**: `diligent config get/set` reads and writes config.json values from CLI (low priority; cut first if Phase 1 runs long)
 - [x] **INIT-05**: pyproject.toml scaffold with hatchling build backend, BSL 1.1 license header, package metadata
 - [x] **INIT-06**: Atomic file writes (write to temp file, fsync, os.replace) for all state file mutations, with retry/backoff for OneDrive file locks
 - [x] **INIT-07**: Schema version recorded in config.json; `diligent migrate` path for future schema changes
@@ -103,8 +103,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **XC-03**: No network requests, no API keys, no telemetry, no phone-home during normal operation
 - [x] **XC-04**: Source documents are read-only from diligent's perspective; the tool never modifies files the analyst placed in the deal folder
 - [x] **XC-05**: All state file writes validate the resulting file structure before committing; validation failure preserves prior state
-- [ ] **XC-06**: --json output flag available on every command for AI agent consumption
-- [ ] **XC-07**: No interactive prompts that would break AI agent tool-use loop; all input via CLI flags
+- [x] **XC-06**: --json output flag available on every command for AI agent consumption
+- [x] **XC-07**: No interactive prompts that would break AI agent tool-use loop; all input via CLI flags
 - [x] **XC-08**: BSL 1.1 license with Additional Use Grant for individual use; commercial service-provider use requires separate license
 
 ## v2 Requirements
@@ -160,10 +160,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INIT-01 | Phase 1 | Pending |
+| INIT-01 | Phase 1 | Complete |
 | INIT-02 | Phase 1 | Complete |
-| INIT-03 | Phase 1 | Pending |
-| INIT-04 | Phase 1 | Pending |
+| INIT-03 | Phase 1 | Complete |
+| INIT-04 | Phase 1 | Complete |
 | INIT-05 | Phase 1 | Complete |
 | INIT-06 | Phase 1 | Complete |
 | INIT-07 | Phase 1 | Complete |
@@ -227,8 +227,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | XC-03 | Phase 1 | Complete |
 | XC-04 | Phase 1 | Complete |
 | XC-05 | Phase 1 | Complete |
-| XC-06 | Phase 1 | Pending |
-| XC-07 | Phase 1 | Pending |
+| XC-06 | Phase 1 | Complete |
+| XC-07 | Phase 1 | Complete |
 | XC-08 | Phase 1 | Complete |
 
 **Coverage:**
