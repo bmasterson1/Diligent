@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs: initialize project' --files .planning/PROJECT.md)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(node \"C:/Users/maste/.claude/get-shit-done/bin/gsd-tools.cjs\" --help)",
+      "Bash(node \"C:/Users/maste/.claude/get-shit-done/bin/gsd-tools.cjs\")",
+      "Bash(python3 -c ':*)",
+      "Bash(python3 -c \"open\\('c:/Users/maste/OneDrive/Desktop/Diligent/.planning/research/SUMMARY.md','w',encoding='utf-8'\\).write\\(open\\('/tmp/summary_content.py'\\).read\\(\\)\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python3 /tmp/write_summary.py)",
+      "Bash(node \"C:/Users/maste/.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: complete project research\" --files \".planning/research/\" --cwd \"c:/Users/maste/OneDrive/Desktop/Diligent\")",
+      "Bash(node \"C:/Users/maste/.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: add project research files\" --files \".planning/research/STACK.md\" --files \".planning/research/FEATURES.md\" --cwd \"c:/Users/maste/OneDrive/Desktop/Diligent\")",
+      "Bash(printf '%s\\\\n' 'const fs = require\\('\\\\''fs'\\\\''\\);' 'const dest = '\\\\''c:/Users/maste/OneDrive/Desktop/Diligent/.planning/research/SUMMARY.md'\\\\'';' 'const L = [];')",
+      "Bash(python3 /tmp/wsummary.js)",
+      "Bash(node /tmp/wsummary.js)",
+      "Bash(python3 -c \"open\\('/tmp/pyscript.py','w'\\).write\\('import pathlib\\\\n'\\)\")"
+    ]
+  }
+}
