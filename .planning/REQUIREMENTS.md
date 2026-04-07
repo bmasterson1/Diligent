@@ -10,7 +10,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Initialization
 
 - [ ] **INIT-01**: `diligent init` scaffolds `.diligence/` directory with all 6 core state files (DEAL.md, TRUTH.md, SOURCES.md, WORKSTREAMS.md, STATE.md, config.json) from templates
-- [ ] **INIT-02**: State file readers/writers round-trip all 6 core files without data loss or format drift
+- [x] **INIT-02**: State file readers/writers round-trip all 6 core files without data loss or format drift
 - [ ] **INIT-03**: `diligent doctor` validates file integrity across all state files, detects corruption, reports issues with suggested fixes
 - [ ] **INIT-04**: `diligent config get/set` reads and writes config.json values from CLI (low priority; cut first if Phase 1 runs long)
 - [x] **INIT-05**: pyproject.toml scaffold with hatchling build backend, BSL 1.1 license header, package metadata
@@ -101,7 +101,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **XC-01**: All commands return in under 2 seconds for typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
 - [ ] **XC-02**: `diligent reconcile` completes in under 10 seconds for typical deal folder
 - [x] **XC-03**: No network requests, no API keys, no telemetry, no phone-home during normal operation
-- [ ] **XC-04**: Source documents are read-only from diligent's perspective; the tool never modifies files the analyst placed in the deal folder
+- [x] **XC-04**: Source documents are read-only from diligent's perspective; the tool never modifies files the analyst placed in the deal folder
 - [x] **XC-05**: All state file writes validate the resulting file structure before committing; validation failure preserves prior state
 - [ ] **XC-06**: --json output flag available on every command for AI agent consumption
 - [ ] **XC-07**: No interactive prompts that would break AI agent tool-use loop; all input via CLI flags
@@ -161,7 +161,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INIT-01 | Phase 1 | Pending |
-| INIT-02 | Phase 1 | Pending |
+| INIT-02 | Phase 1 | Complete |
 | INIT-03 | Phase 1 | Pending |
 | INIT-04 | Phase 1 | Pending |
 | INIT-05 | Phase 1 | Complete |
@@ -225,7 +225,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | XC-01 | Phase 3 | Pending |
 | XC-02 | Phase 3 | Pending |
 | XC-03 | Phase 1 | Complete |
-| XC-04 | Phase 1 | Pending |
+| XC-04 | Phase 1 | Complete |
 | XC-05 | Phase 1 | Complete |
 | XC-06 | Phase 1 | Pending |
 | XC-07 | Phase 1 | Pending |

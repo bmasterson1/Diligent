@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `diligent doctor` detects and reports corruption in any state file with actionable fix suggestions
   4. File writes survive simulated crash (atomic write with OneDrive retry) and never leave partial state on disk
   5. CLI starts in under 200ms; all commands support --json output; no interactive prompts break agent tool-use
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 
 Plans:
 - [x] 01-01-PLAN.md -- Package scaffold, typed models, atomic write utility, LazyGroup CLI
@@ -113,7 +113,7 @@ Phase 5 requires both Phase 3 and Phase 4.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/3 | In Progress | - |
+| 1. Foundation | 2/3 | In Progress|  |
 | 2. Sources and Truth | 0/3 | Not started | - |
 | 3. Artifacts and Reconciliation | 0/2 | Not started | - |
 | 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
