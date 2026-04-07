@@ -13,10 +13,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **INIT-02**: State file readers/writers round-trip all 6 core files without data loss or format drift
 - [ ] **INIT-03**: `diligent doctor` validates file integrity across all state files, detects corruption, reports issues with suggested fixes
 - [ ] **INIT-04**: `diligent config get/set` reads and writes config.json values from CLI (low priority; cut first if Phase 1 runs long)
-- [ ] **INIT-05**: pyproject.toml scaffold with hatchling build backend, BSL 1.1 license header, package metadata
-- [ ] **INIT-06**: Atomic file writes (write to temp file, fsync, os.replace) for all state file mutations, with retry/backoff for OneDrive file locks
-- [ ] **INIT-07**: Schema version recorded in config.json; `diligent migrate` path for future schema changes
-- [ ] **INIT-08**: CLI startup under 200ms via lazy command loading (defer openpyxl/pdfplumber/python-docx imports until needed)
+- [x] **INIT-05**: pyproject.toml scaffold with hatchling build backend, BSL 1.1 license header, package metadata
+- [x] **INIT-06**: Atomic file writes (write to temp file, fsync, os.replace) for all state file mutations, with retry/backoff for OneDrive file locks
+- [x] **INIT-07**: Schema version recorded in config.json; `diligent migrate` path for future schema changes
+- [x] **INIT-08**: CLI startup under 200ms via lazy command loading (defer openpyxl/pdfplumber/python-docx imports until needed)
 
 ### Sources
 
@@ -100,12 +100,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **XC-01**: All commands return in under 2 seconds for typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
 - [ ] **XC-02**: `diligent reconcile` completes in under 10 seconds for typical deal folder
-- [ ] **XC-03**: No network requests, no API keys, no telemetry, no phone-home during normal operation
+- [x] **XC-03**: No network requests, no API keys, no telemetry, no phone-home during normal operation
 - [ ] **XC-04**: Source documents are read-only from diligent's perspective; the tool never modifies files the analyst placed in the deal folder
-- [ ] **XC-05**: All state file writes validate the resulting file structure before committing; validation failure preserves prior state
+- [x] **XC-05**: All state file writes validate the resulting file structure before committing; validation failure preserves prior state
 - [ ] **XC-06**: --json output flag available on every command for AI agent consumption
 - [ ] **XC-07**: No interactive prompts that would break AI agent tool-use loop; all input via CLI flags
-- [ ] **XC-08**: BSL 1.1 license with Additional Use Grant for individual use; commercial service-provider use requires separate license
+- [x] **XC-08**: BSL 1.1 license with Additional Use Grant for individual use; commercial service-provider use requires separate license
 
 ## v2 Requirements
 
@@ -164,10 +164,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INIT-02 | Phase 1 | Pending |
 | INIT-03 | Phase 1 | Pending |
 | INIT-04 | Phase 1 | Pending |
-| INIT-05 | Phase 1 | Pending |
-| INIT-06 | Phase 1 | Pending |
-| INIT-07 | Phase 1 | Pending |
-| INIT-08 | Phase 1 | Pending |
+| INIT-05 | Phase 1 | Complete |
+| INIT-06 | Phase 1 | Complete |
+| INIT-07 | Phase 1 | Complete |
+| INIT-08 | Phase 1 | Complete |
 | SRC-01 | Phase 2 | Pending |
 | SRC-02 | Phase 2 | Pending |
 | SRC-03 | Phase 2 | Pending |
@@ -224,12 +224,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DIST-06 | Phase 5 | Pending |
 | XC-01 | Phase 3 | Pending |
 | XC-02 | Phase 3 | Pending |
-| XC-03 | Phase 1 | Pending |
+| XC-03 | Phase 1 | Complete |
 | XC-04 | Phase 1 | Pending |
-| XC-05 | Phase 1 | Pending |
+| XC-05 | Phase 1 | Complete |
 | XC-06 | Phase 1 | Pending |
 | XC-07 | Phase 1 | Pending |
-| XC-08 | Phase 1 | Pending |
+| XC-08 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 70 total
