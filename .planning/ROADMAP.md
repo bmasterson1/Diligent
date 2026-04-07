@@ -1,0 +1,120 @@
+# Roadmap: diligent
+
+## Overview
+
+diligent is built in strict dependency order: the state layer must exist before any command can read or write it, the three registries (sources, truth, artifacts) must be solid before reconciliation can walk the dependency graph, and organizational/output features layer on top. The verification gate on truth set (TRUTH-04) is the single most important behavior in the CLI. The "done" bar: Bryce uses diligent as the real state layer on Project Arrival, and reconcile catches real staleness.
+
+## Phases
+
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+Decimal phases appear between their surrounding integers in numeric order.
+
+- [ ] **Phase 1: Foundation** - Models, state layer, atomic writes, CLI scaffold, and `diligent init`
+- [ ] **Phase 2: Sources and Truth** - Source document registry and the core fact management loop with verification gate
+- [ ] **Phase 3: Artifacts and Reconciliation** - Deliverable tracking and the dependency-graph staleness engine
+- [ ] **Phase 4: Workstreams, Tasks, and Questions** - Organizational layer for structuring deal work
+- [ ] **Phase 5: Status, Handoff, and Distribution** - Aggregation commands, AI session restore, skill files, and PyPI ship
+
+## Phase Details
+
+### Phase 1: Foundation
+**Goal**: Analyst can scaffold a deal folder and trust that every state file read/write is atomic, correct, and round-trip safe
+**Depends on**: Nothing (first phase)
+**Requirements**: INIT-01, INIT-02, INIT-03, INIT-04, INIT-05, INIT-06, INIT-07, INIT-08, XC-03, XC-04, XC-05, XC-06, XC-07, XC-08
+**Success Criteria** (what must be TRUE):
+  1. `diligent init` creates `.diligence/` with all 6 state files from templates in a new deal folder
+  2. Every state file can be read into a typed model and written back without data loss or format drift (round-trip fidelity)
+  3. `diligent doctor` detects and reports corruption in any state file with actionable fix suggestions
+  4. File writes survive simulated crash (atomic write with OneDrive retry) and never leave partial state on disk
+  5. CLI starts in under 200ms; all commands support --json output; no interactive prompts break agent tool-use
+**Plans**: TBD
+
+Plans:
+- [ ] 01-01: TBD
+- [ ] 01-02: TBD
+- [ ] 01-03: TBD
+
+### Phase 2: Sources and Truth
+**Goal**: Analyst can ingest source documents, record validated facts with citations, and trust that TRUTH.md is the single source of truth with full provenance
+**Depends on**: Phase 1
+**Requirements**: SRC-01, SRC-02, SRC-03, SRC-04, SRC-05, SRC-06, SRC-07, TRUTH-01, TRUTH-02, TRUTH-03, TRUTH-04, TRUTH-05, TRUTH-06, TRUTH-07, TRUTH-08, TRUTH-09, TRUTH-10, TRUTH-11, TRUTH-12
+**Success Criteria** (what must be TRUE):
+  1. `diligent ingest` registers a source document with metadata and supersedes chain; ingesting an Excel file that supersedes a prior version automatically shows what changed
+  2. `diligent truth set` requires --source citation and stores values as quoted strings; updating an existing fact pushes the prior value into a visible supersedes chain
+  3. When `truth set` would change a value beyond tolerance, the verification gate stops, surfaces the discrepancy with both sources, and requires explicit confirmation before proceeding; rejection routes the discrepancy to the questions queue
+  4. `diligent truth trace` shows full revision history for any fact: every value, source, date, and the diff between source documents
+  5. `diligent sources list/show` and `diligent truth get/list/flag` all work with --json output and complete in under 2 seconds
+**Plans**: TBD
+
+Plans:
+- [ ] 02-01: TBD
+- [ ] 02-02: TBD
+- [ ] 02-03: TBD
+
+### Phase 3: Artifacts and Reconciliation
+**Goal**: Analyst types one command and gets a definitive answer about which deliverables are stale and why
+**Depends on**: Phase 2
+**Requirements**: ART-01, ART-02, ART-03, ART-04, ART-05, ART-06, ART-07, ART-08, ART-09, XC-01, XC-02
+**Success Criteria** (what must be TRUE):
+  1. `diligent artifact register` links a deliverable to specific truth keys; `artifact list` shows all registered artifacts with staleness status
+  2. `diligent reconcile` walks source -> fact -> artifact dependency graph and reports which artifacts are stale, which fact changed, when, from what source, and how many days stale
+  3. `diligent reconcile --workstream` scopes to one workstream; `--strict` exits non-zero on any staleness for scripted checks
+  4. All commands complete in under 2 seconds; reconcile completes in under 10 seconds for a typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
+**Plans**: TBD
+
+Plans:
+- [ ] 03-01: TBD
+- [ ] 03-02: TBD
+
+### Phase 4: Workstreams, Tasks, and Questions
+**Goal**: Analyst can organize deal work into workstreams with tasks and track open questions that surface naturally from the truth verification process
+**Depends on**: Phase 2 (questions queue referenced by TRUTH-04 verification gate)
+**Requirements**: WS-01, WS-02, WS-03, WS-04, WS-05, WS-06, TASK-01, TASK-02, TASK-03, Q-01, Q-02, Q-03, Q-04, Q-05
+**Success Criteria** (what must be TRUE):
+  1. `diligent workstream new` creates a workstream with subdirectory and context files; 6 pre-defined templates available at init time
+  2. `diligent task new/list/complete` creates, lists, and closes tasks within a workstream with summary content
+  3. `diligent ask` adds open questions with owner and workstream; `diligent answer` closes them with optional source citation
+  4. Questions rejected by the truth verification gate (TRUTH-04) appear in `diligent questions list`; all question commands support --owner filter
+  5. Hand-edits to WORKSTREAMS.md are picked up on next CLI read (CLI is convenience, not gate)
+**Plans**: TBD
+
+Plans:
+- [ ] 04-01: TBD
+- [ ] 04-02: TBD
+- [ ] 04-03: TBD
+
+### Phase 5: Status, Handoff, and Distribution
+**Goal**: Analyst gets full deal state in one command, can restore AI context in a fresh session, and can install diligent from PyPI with IDE skill files
+**Depends on**: Phase 3 and Phase 4
+**Requirements**: STATE-01, STATE-02, STATE-03, STATE-04, STATE-05, STATE-06, DIST-01, DIST-02, DIST-03, DIST-04, DIST-05, DIST-06
+**Success Criteria** (what must be TRUE):
+  1. `diligent status` shows full deal state (truth counts, stale flags, recent ingests, workstream status, artifact counts, open questions) in plain text under 2 seconds; --json available
+  2. `diligent handoff` generates a single paste-ready markdown document that restores AI context in a fresh session, including deal context, state, recent truth/source entries, and open questions
+  3. `pipx install diligent` works on a clean Windows machine; the package is published to PyPI
+  4. `diligent install --claude-code` and `--antigravity` drop parameterized SKILL.md files into the correct IDE directories; `--uninstall` removes them
+  5. A second person on a clean machine can go from zero to working `.diligence/` in under five minutes following only the README (catches install-path bugs, missing dependencies, and documentation gaps)
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: TBD
+- [ ] 05-02: TBD
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phase 4 depends on Phase 2 (verification gate routes to questions queue), NOT on Phase 3.
+Phases 3 and 4 can run in parallel or swap order based on dogfooding feedback after Phase 2.
+Default order keeps 3 before 4 because reconcile is the feature that justifies the tool.
+Phase 5 requires both Phase 3 and Phase 4.
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Foundation | 0/3 | Not started | - |
+| 2. Sources and Truth | 0/3 | Not started | - |
+| 3. Artifacts and Reconciliation | 0/2 | Not started | - |
+| 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
+| 5. Status, Handoff, and Distribution | 0/2 | Not started | - |

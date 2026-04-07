@@ -160,15 +160,84 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | | |
+| INIT-01 | Phase 1 | Pending |
+| INIT-02 | Phase 1 | Pending |
+| INIT-03 | Phase 1 | Pending |
+| INIT-04 | Phase 1 | Pending |
+| INIT-05 | Phase 1 | Pending |
+| INIT-06 | Phase 1 | Pending |
+| INIT-07 | Phase 1 | Pending |
+| INIT-08 | Phase 1 | Pending |
+| SRC-01 | Phase 2 | Pending |
+| SRC-02 | Phase 2 | Pending |
+| SRC-03 | Phase 2 | Pending |
+| SRC-04 | Phase 2 | Pending |
+| SRC-05 | Phase 2 | Pending |
+| SRC-06 | Phase 2 | Pending |
+| SRC-07 | Phase 2 | Pending |
+| TRUTH-01 | Phase 2 | Pending |
+| TRUTH-02 | Phase 2 | Pending |
+| TRUTH-03 | Phase 2 | Pending |
+| TRUTH-04 | Phase 2 | Pending |
+| TRUTH-05 | Phase 2 | Pending |
+| TRUTH-06 | Phase 2 | Pending |
+| TRUTH-07 | Phase 2 | Pending |
+| TRUTH-08 | Phase 2 | Pending |
+| TRUTH-09 | Phase 2 | Pending |
+| TRUTH-10 | Phase 2 | Pending |
+| TRUTH-11 | Phase 2 | Pending |
+| TRUTH-12 | Phase 2 | Pending |
+| ART-01 | Phase 3 | Pending |
+| ART-02 | Phase 3 | Pending |
+| ART-03 | Phase 3 | Pending |
+| ART-04 | Phase 3 | Pending |
+| ART-05 | Phase 3 | Pending |
+| ART-06 | Phase 3 | Pending |
+| ART-07 | Phase 3 | Pending |
+| ART-08 | Phase 3 | Pending |
+| ART-09 | Phase 3 | Pending |
+| WS-01 | Phase 4 | Pending |
+| WS-02 | Phase 4 | Pending |
+| WS-03 | Phase 4 | Pending |
+| WS-04 | Phase 4 | Pending |
+| WS-05 | Phase 4 | Pending |
+| WS-06 | Phase 4 | Pending |
+| TASK-01 | Phase 4 | Pending |
+| TASK-02 | Phase 4 | Pending |
+| TASK-03 | Phase 4 | Pending |
+| Q-01 | Phase 4 | Pending |
+| Q-02 | Phase 4 | Pending |
+| Q-03 | Phase 4 | Pending |
+| Q-04 | Phase 4 | Pending |
+| Q-05 | Phase 4 | Pending |
+| STATE-01 | Phase 5 | Pending |
+| STATE-02 | Phase 5 | Pending |
+| STATE-03 | Phase 5 | Pending |
+| STATE-04 | Phase 5 | Pending |
+| STATE-05 | Phase 5 | Pending |
+| STATE-06 | Phase 5 | Pending |
+| DIST-01 | Phase 5 | Pending |
+| DIST-02 | Phase 5 | Pending |
+| DIST-03 | Phase 5 | Pending |
+| DIST-04 | Phase 5 | Pending |
+| DIST-05 | Phase 5 | Pending |
+| DIST-06 | Phase 5 | Pending |
+| XC-01 | Phase 3 | Pending |
+| XC-02 | Phase 3 | Pending |
+| XC-03 | Phase 1 | Pending |
+| XC-04 | Phase 1 | Pending |
+| XC-05 | Phase 1 | Pending |
+| XC-06 | Phase 1 | Pending |
+| XC-07 | Phase 1 | Pending |
+| XC-08 | Phase 1 | Pending |
 
 **Coverage:**
-- v1 requirements: 60 total
-- Mapped to phases: 0
-- Unmapped: 60
+- v1 requirements: 70 total
+- Mapped to phases: 70
+- Unmapped: 0
 
-Note: TRUTH gained one (verification gate as own req), ART lost one (ART-10 merged into ART-09). Net count unchanged at 60.
+Note: Actual count is 70, not 60 as previously stated. Recount: INIT(8) + SRC(7) + TRUTH(12) + ART(9) + WS(6) + TASK(3) + Q(5) + STATE(6) + DIST(6) + XC(8) = 70.
 
 ---
 *Requirements defined: 2026-04-07*
-*Last updated: 2026-04-07 after initial definition*
+*Last updated: 2026-04-07 after roadmap creation*
