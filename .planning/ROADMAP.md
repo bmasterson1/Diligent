@@ -30,12 +30,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `diligent doctor` detects and reports corruption in any state file with actionable fix suggestions
   4. File writes survive simulated crash (atomic write with OneDrive retry) and never leave partial state on disk
   5. CLI starts in under 200ms; all commands support --json output; no interactive prompts break agent tool-use
-**Plans**: TBD
+**Plans:** 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md -- Package scaffold, typed models, atomic write utility, LazyGroup CLI
+- [ ] 01-02-PLAN.md -- State file readers/writers and templates for all 6 file types
+- [ ] 01-03-PLAN.md -- Commands: init, doctor, config, startup benchmark, JSON output
 
 ### Phase 2: Sources and Truth
 **Goal**: Analyst can ingest source documents, record validated facts with citations, and trust that TRUTH.md is the single source of truth with full provenance
@@ -113,7 +113,7 @@ Phase 5 requires both Phase 3 and Phase 4.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 0/3 | Planning complete | - |
 | 2. Sources and Truth | 0/3 | Not started | - |
 | 3. Artifacts and Reconciliation | 0/2 | Not started | - |
 | 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
