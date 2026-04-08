@@ -45,10 +45,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Artifacts
 
-- [ ] **ART-01**: `diligent artifact register <path> --references <key1,key2,...>` registers a deliverable with explicit fact dependencies
+- [x] **ART-01**: `diligent artifact register <path> --references <key1,key2,...>` registers a deliverable with explicit fact dependencies
 - [x] **ART-02**: artifacts/manifest.json stores registered artifacts with fields for path, references, workstream, registration date, last refresh timestamp, and staleness status
-- [ ] **ART-03**: `diligent artifact list` shows all registered artifacts; supports --stale filter
-- [ ] **ART-04**: `diligent artifact refresh <path>` marks artifact as refreshed (updates last refresh timestamp)
+- [x] **ART-03**: `diligent artifact list` shows all registered artifacts; supports --stale filter
+- [x] **ART-04**: `diligent artifact refresh <path>` marks artifact as refreshed (updates last refresh timestamp)
 - [ ] **ART-05**: `diligent reconcile` walks the dependency graph (source -> fact -> artifact), reports stale artifacts with structured output: which fact changed, when, from what source, how many days stale
 - [ ] **ART-06**: `diligent reconcile --workstream <name>` scopes reconciliation to one workstream
 - [ ] **ART-07**: `diligent reconcile --strict` exits non-zero on any staleness (for scripted checks)
@@ -187,10 +187,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRUTH-10 | Phase 2 | Complete |
 | TRUTH-11 | Phase 2 | Complete |
 | TRUTH-12 | Phase 2 | Complete |
-| ART-01 | Phase 3 | Pending |
+| ART-01 | Phase 3 | Complete |
 | ART-02 | Phase 3 | Complete |
-| ART-03 | Phase 3 | Pending |
-| ART-04 | Phase 3 | Pending |
+| ART-03 | Phase 3 | Complete |
+| ART-04 | Phase 3 | Complete |
 | ART-05 | Phase 3 | Pending |
 | ART-06 | Phase 3 | Pending |
 | ART-07 | Phase 3 | Pending |
