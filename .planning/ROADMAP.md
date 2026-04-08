@@ -83,7 +83,7 @@ Plans:
   3. `diligent ask` adds open questions with owner and workstream; `diligent answer` closes them with optional source citation
   4. Questions rejected by the truth verification gate (TRUTH-04) appear in `diligent questions list`; all question commands support --owner filter
   5. Hand-edits to WORKSTREAMS.md are picked up on next CLI read (CLI is convenience, not gate)
-**Plans:** 4 plans
+**Plans:** 3/4 plans executed
 
 Plans:
 - [ ] 04-01-PLAN.md -- Model extensions (WorkstreamEntry + QuestionEntry), state layer updates, workstream and task templates
@@ -121,5 +121,5 @@ Phase 5 requires both Phase 3 and Phase 4.
 | 1. Foundation | 3/3 | Complete   | 2026-04-07 |
 | 2. Sources and Truth | 3/5 | In Progress|  |
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
-| 4. Workstreams, Tasks, and Questions | 0/4 | Not started | - |
+| 4. Workstreams, Tasks, and Questions | 3/4 | In Progress|  |
 | 5. Status, Handoff, and Distribution | 0/2 | Not started | - |
