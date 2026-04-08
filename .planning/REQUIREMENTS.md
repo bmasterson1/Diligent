@@ -49,10 +49,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ART-02**: artifacts/manifest.json stores registered artifacts with fields for path, references, workstream, registration date, last refresh timestamp, and staleness status
 - [x] **ART-03**: `diligent artifact list` shows all registered artifacts; supports --stale filter
 - [x] **ART-04**: `diligent artifact refresh <path>` marks artifact as refreshed (updates last refresh timestamp)
-- [ ] **ART-05**: `diligent reconcile` walks the dependency graph (source -> fact -> artifact), reports stale artifacts with structured output: which fact changed, when, from what source, how many days stale
-- [ ] **ART-06**: `diligent reconcile --workstream <name>` scopes reconciliation to one workstream
-- [ ] **ART-07**: `diligent reconcile --strict` exits non-zero on any staleness (for scripted checks)
-- [ ] **ART-08**: reconcile_anchors.py is the deterministic engine behind `diligent reconcile`
+- [x] **ART-05**: `diligent reconcile` walks the dependency graph (source -> fact -> artifact), reports stale artifacts with structured output: which fact changed, when, from what source, how many days stale
+- [x] **ART-06**: `diligent reconcile --workstream <name>` scopes reconciliation to one workstream
+- [x] **ART-07**: `diligent reconcile --strict` exits non-zero on any staleness (for scripted checks)
+- [x] **ART-08**: reconcile_anchors.py is the deterministic engine behind `diligent reconcile`
 - [ ] **ART-09**: artifact_scanner.py scans .docx files for embedded `{{truth:key}}` citation tags; opt-in via --scan flag on artifact register; .docx only in v1. Manual --references is the default and supported path. --scan is supplementary and experimental. Milestone 3 acceptance test runs against manual --references, not --scan.
 
 ### Workstreams
@@ -191,10 +191,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ART-02 | Phase 3 | Complete |
 | ART-03 | Phase 3 | Complete |
 | ART-04 | Phase 3 | Complete |
-| ART-05 | Phase 3 | Pending |
-| ART-06 | Phase 3 | Pending |
-| ART-07 | Phase 3 | Pending |
-| ART-08 | Phase 3 | Pending |
+| ART-05 | Phase 3 | Complete |
+| ART-06 | Phase 3 | Complete |
+| ART-07 | Phase 3 | Complete |
+| ART-08 | Phase 3 | Complete |
 | ART-09 | Phase 3 | Pending |
 | WS-01 | Phase 4 | Pending |
 | WS-02 | Phase 4 | Pending |
