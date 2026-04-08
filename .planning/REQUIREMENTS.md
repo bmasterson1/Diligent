@@ -24,9 +24,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **SRC-02**: Source IDs follow `{DEAL_CODE}-{NNN}` convention (zero-padded, monotonic, never reused)
 - [x] **SRC-03**: `diligent sources list` shows all registered sources with date and status
 - [x] **SRC-04**: `diligent sources show <source-id>` displays full record for a single source
-- [ ] **SRC-05**: `diligent sources diff <id-a> <id-b>` diffs two source files using helper scripts
-- [ ] **SRC-06**: diff_excel_versions.py helper reports which sheets, named ranges, and cells differ between two Excel files
-- [ ] **SRC-07**: Ingest automatically invokes diff_excel_versions.py when the ingested file supersedes a known prior Excel source
+- [x] **SRC-05**: `diligent sources diff <id-a> <id-b>` diffs two source files using helper scripts
+- [x] **SRC-06**: diff_excel_versions.py helper reports which sheets, named ranges, and cells differ between two Excel files
+- [x] **SRC-07**: Ingest automatically invokes diff_excel_versions.py when the ingested file supersedes a known prior Excel source
 
 ### Truth
 
@@ -172,9 +172,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SRC-02 | Phase 2 | Complete |
 | SRC-03 | Phase 2 | Complete |
 | SRC-04 | Phase 2 | Complete |
-| SRC-05 | Phase 2 | Pending |
-| SRC-06 | Phase 2 | Pending |
-| SRC-07 | Phase 2 | Pending |
+| SRC-05 | Phase 2 | Complete |
+| SRC-06 | Phase 2 | Complete |
+| SRC-07 | Phase 2 | Complete |
 | TRUTH-01 | Phase 2 | Complete |
 | TRUTH-02 | Phase 2 | Complete |
 | TRUTH-03 | Phase 2 | Complete |
