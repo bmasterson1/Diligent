@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 05
-current_phase_name: status, handoff, and distribution
-current_plan: Not started
-status: completed
-stopped_at: Completed 05-04-PLAN.md (all plans complete)
-last_updated: "2026-04-08T22:28:27.866Z"
+current_phase: 06
+current_phase_name: integration and cleanup
+current_plan: 2
+status: verifying
+stopped_at: Completed 06-01-PLAN.md
+last_updated: "2026-04-08T23:07:01.843Z"
 last_activity: 2026-04-08
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 20
-  completed_plans: 20
-  percent: 100
+  total_phases: 6
+  completed_phases: 6
+  total_plans: 22
+  completed_plans: 22
+  percent: 95
 ---
 
 # Project State
@@ -28,16 +28,16 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 
 ## Current Position
 
-**Current Phase:** 05
-**Current Phase Name:** status, handoff, and distribution
-**Total Phases:** 5
-**Current Plan:** Not started
-**Total Plans in Phase:** 4
-**Status:** Milestone complete
+**Current Phase:** 06
+**Current Phase Name:** integration and cleanup
+**Total Phases:** 6
+**Current Plan:** 2
+**Total Plans in Phase:** 2
+**Status:** Phase complete — ready for verification
 **Last Activity:** 2026-04-08
-**Last Activity Description:** Phase 05 complete
+**Last Activity Description:** Completed 06-02-PLAN.md
 
-Progress: [██████████] 100%
+Progress: [█████████░] 95%
 
 ## Performance Metrics
 
@@ -77,6 +77,8 @@ Progress: [██████████] 100%
 | Phase 05 P02 | 8min | 1 tasks | 5 files |
 | Phase 05 P03 | 5min | 2 tasks | 10 files |
 | Phase 05 P04 | 5min | 2 tasks | 2 files |
+| Phase 06 P02 | 3min | 2 tasks | 5 files |
+| Phase 06 P01 | 3min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -152,6 +154,11 @@ Recent decisions affecting current work:
 - [Phase 05]: Clipboard helper catches all exceptions and returns bool (never raises)
 - [Phase 05]: PyPI package name is diligent-dd (diligent was taken); CLI entry point remains `diligent`
 - [Phase 05]: Explicit hatchling wheel packages config ensures skill .md files ship in wheel
+- [Phase 06]: Reused StaleFactInfo.old_value for flagged reason rather than adding a new dataclass field
+- [Phase 06]: Kept write_state as documented internal utility for v1 rather than removing or wiring it
+- [Phase 06]: ART-02 and ART-09 verified accurate, no REQUIREMENTS.md text changes needed
+- [Phase 06]: Replicated canonical _find_diligence_dir from truth_cmd.py into sources_cmd.py (per Phase 1 decision: no shared utility)
+- [Phase 06]: status_cmd uses lazy import for read_config (consistent with other lazy imports in that module)
 
 ### Pending Todos
 
@@ -164,6 +171,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T22:08:00.000Z
-Stopped at: Completed 05-04-PLAN.md (all plans complete)
+Last session: 2026-04-08T23:07:01.841Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None
