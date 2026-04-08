@@ -83,12 +83,13 @@ Plans:
   3. `diligent ask` adds open questions with owner and workstream; `diligent answer` closes them with optional source citation
   4. Questions rejected by the truth verification gate (TRUTH-04) appear in `diligent questions list`; all question commands support --owner filter
   5. Hand-edits to WORKSTREAMS.md are picked up on next CLI read (CLI is convenience, not gate)
-**Plans**: TBD
+**Plans:** 4 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-- [ ] 04-03: TBD
+- [ ] 04-01-PLAN.md -- Model extensions (WorkstreamEntry + QuestionEntry), state layer updates, workstream and task templates
+- [ ] 04-02-PLAN.md -- Workstream commands (new, list, show) and init extension for workstream subdirectories
+- [ ] 04-03-PLAN.md -- Question commands (ask, answer, questions list) with origin tags and owner filter
+- [ ] 04-04-PLAN.md -- Task commands (new, list, complete) with directory-based storage and SUMMARY.md validation
 
 ### Phase 5: Status, Handoff, and Distribution
 **Goal**: Analyst gets full deal state in one command, can restore AI context in a fresh session, and can install diligent from PyPI with IDE skill files
@@ -120,5 +121,5 @@ Phase 5 requires both Phase 3 and Phase 4.
 | 1. Foundation | 3/3 | Complete   | 2026-04-07 |
 | 2. Sources and Truth | 3/5 | In Progress|  |
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
-| 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
+| 4. Workstreams, Tasks, and Questions | 0/4 | Not started | - |
 | 5. Status, Handoff, and Distribution | 0/2 | Not started | - |
