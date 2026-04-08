@@ -65,7 +65,7 @@ Plans:
   2. `diligent reconcile` walks source -> fact -> artifact dependency graph and reports which artifacts are stale, which fact changed, when, from what source, and how many days stale
   3. `diligent reconcile --workstream` scopes to one workstream; `--strict` exits non-zero on any staleness for scripted checks
   4. All commands complete in under 2 seconds; reconcile completes in under 10 seconds for a typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
-**Plans:** 4 plans
+**Plans:** 1/4 plans executed
 
 Plans:
 - [ ] 03-01-PLAN.md -- ArtifactEntry model, artifacts.py state layer, ARTIFACTS.md template, init/doctor 8-file update
@@ -119,6 +119,6 @@ Phase 5 requires both Phase 3 and Phase 4.
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-04-07 |
 | 2. Sources and Truth | 3/5 | In Progress|  |
-| 3. Artifacts and Reconciliation | 0/4 | Not started | - |
+| 3. Artifacts and Reconciliation | 1/4 | In Progress|  |
 | 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
 | 5. Status, Handoff, and Distribution | 0/2 | Not started | - |
