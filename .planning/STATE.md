@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 2
 current_phase_name: sources and truth
-current_plan: 4
+current_plan: 5
 status: executing
-stopped_at: Completed 02-03-PLAN.md
-last_updated: "2026-04-08T01:00:41.156Z"
+stopped_at: Completed 02-04-PLAN.md
+last_updated: "2026-04-08T01:10:04.803Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
   percent: 33
 ---
 
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 **Current Phase:** 2
 **Current Phase Name:** sources and truth
 **Total Phases:** 5
-**Current Plan:** 4
+**Current Plan:** 5
 **Total Plans in Phase:** 5
 **Status:** Ready to execute
 **Last Activity:** 2026-04-08
@@ -63,6 +63,7 @@ Progress: [|||.......] 33%
 | Phase 02 P01 | 7min | 2 tasks | 12 files |
 | Phase 02 P02 | 4min | 2 tasks | 4 files |
 | Phase 02 P03 | 5min | 2 tasks | 5 files |
+| Phase 02 P04 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,10 @@ Recent decisions affecting current work:
 - [Phase 02]: compute_gate_result is a pure function returning None or dict, keeping gate logic testable without CLI
 - [Phase 02]: Supersedes chain inserts at position 0 (most recent first) preserving existing chain entries
 - [Phase 02]: Gate rejection question text includes delta description for human readability
+- [Phase 02]: Staleness detection cross-references SOURCES.md supersedes chains rather than timestamp comparison
+- [Phase 02]: Summary line counts all facts regardless of active filters for consistent totals
+- [Phase 02]: Flag events in trace timeline appear after current value entry, before supersedes chain
+- [Phase 02]: Source path resolution falls back to source ID string when source not found in SOURCES.md
 
 ### Pending Todos
 
@@ -105,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T01:00:41.154Z
-Stopped at: Completed 02-03-PLAN.md
+Last session: 2026-04-08T01:10:04.800Z
+Stopped at: Completed 02-04-PLAN.md
 Resume file: None

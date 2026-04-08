@@ -35,9 +35,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TRUTH-03**: Tolerance config in config.json: exact match for non-anchor facts, configurable percentage for anchor metrics
 - [x] **TRUTH-04**: Verification gate: when `truth set` would change an existing value beyond tolerance, the command stops, surfaces the discrepancy (old value, new value, delta, both sources), and requires explicit confirmation before proceeding. On rejection, the proposed value is pushed to the open questions queue via `ask` with the discrepancy as context. This is the load-bearing behavior connecting truth management to the questions queue.
 - [x] **TRUTH-05**: `diligent truth get <key>` shows current value with source citation
-- [ ] **TRUTH-06**: `diligent truth list` lists all facts; supports --workstream and --stale filters
-- [ ] **TRUTH-07**: `diligent truth trace <key>` shows full supersedes history: every value, source, date, and the diff between source documents
-- [ ] **TRUTH-08**: `diligent truth flag <key> --reason` marks a fact as needing review; flagged facts appear in status and truth list --stale
+- [x] **TRUTH-06**: `diligent truth list` lists all facts; supports --workstream and --stale filters
+- [x] **TRUTH-07**: `diligent truth trace <key>` shows full supersedes history: every value, source, date, and the diff between source documents
+- [x] **TRUTH-08**: `diligent truth flag <key> --reason` marks a fact as needing review; flagged facts appear in status and truth list --stale
 - [x] **TRUTH-09**: TRUTH.md is append-only at the entry level: updates write a new value and push the prior value into supersedes chain, never overwrite
 - [x] **TRUTH-10**: fact_parser.py is the canonical TRUTH.md reader/writer; all CLI commands use it; round-trip fidelity is guaranteed
 - [x] **TRUTH-11**: All fact values stored as quoted strings in YAML to prevent PyYAML implicit type coercion (no silent retyping of financial data)
@@ -180,9 +180,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRUTH-03 | Phase 2 | Complete |
 | TRUTH-04 | Phase 2 | Complete |
 | TRUTH-05 | Phase 2 | Complete |
-| TRUTH-06 | Phase 2 | Pending |
-| TRUTH-07 | Phase 2 | Pending |
-| TRUTH-08 | Phase 2 | Pending |
+| TRUTH-06 | Phase 2 | Complete |
+| TRUTH-07 | Phase 2 | Complete |
+| TRUTH-08 | Phase 2 | Complete |
 | TRUTH-09 | Phase 2 | Complete |
 | TRUTH-10 | Phase 2 | Complete |
 | TRUTH-11 | Phase 2 | Complete |
