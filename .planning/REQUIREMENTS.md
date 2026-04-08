@@ -66,9 +66,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Tasks
 
-- [ ] **TASK-01**: `diligent task new <workstream> <desc>` creates task directory with empty SUMMARY.md; PLAN.md and VERIFICATION.md scaffolded as templates but not enforced
-- [ ] **TASK-02**: `diligent task list <workstream>` lists tasks with status
-- [ ] **TASK-03**: `diligent task complete <ws> <task-id>` prompts for summary content and writes SUMMARY.md
+- [x] **TASK-01**: `diligent task new <workstream> <desc>` creates task directory with empty SUMMARY.md; PLAN.md and VERIFICATION.md scaffolded as templates but not enforced
+- [x] **TASK-02**: `diligent task list <workstream>` lists tasks with status
+- [x] **TASK-03**: `diligent task complete <ws> <task-id>` prompts for summary content and writes SUMMARY.md
 
 ### Questions
 
@@ -202,9 +202,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WS-04 | Phase 4 | Complete |
 | WS-05 | Phase 4 | Complete |
 | WS-06 | Phase 4 | Complete |
-| TASK-01 | Phase 4 | Pending |
-| TASK-02 | Phase 4 | Pending |
-| TASK-03 | Phase 4 | Pending |
+| TASK-01 | Phase 4 | Complete |
+| TASK-02 | Phase 4 | Complete |
+| TASK-03 | Phase 4 | Complete |
 | Q-01 | Phase 4 | Complete |
 | Q-02 | Phase 4 | Complete |
 | Q-03 | Phase 4 | Complete |
