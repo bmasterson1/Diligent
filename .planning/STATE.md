@@ -4,17 +4,17 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 5
 current_phase_name: status, handoff, and distribution
-current_plan: Not started
-status: planning
-stopped_at: Phase 5 context gathered
-last_updated: "2026-04-08T16:21:34.551Z"
+current_plan: 3
+status: executing
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-04-08T21:25:07.121Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 16
-  completed_plans: 16
-  percent: 94
+  total_plans: 20
+  completed_plans: 18
+  percent: 85
 ---
 
 # Project State
@@ -31,13 +31,13 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 **Current Phase:** 5
 **Current Phase Name:** status, handoff, and distribution
 **Total Phases:** 5
-**Current Plan:** Not started
+**Current Plan:** 3
 **Total Plans in Phase:** 4
-**Status:** Ready to plan
+**Status:** Ready to execute
 **Last Activity:** 2026-04-08
-**Last Activity Description:** Phase 04 complete, transitioned to Phase 5
+**Last Activity Description:** Completed 05-01 status command and time utilities
 
-Progress: [█████████░] 94%
+Progress: [█████████░] 85%
 
 ## Performance Metrics
 
@@ -73,6 +73,8 @@ Progress: [█████████░] 94%
 | Phase 04 P03 | 5min | 2 tasks | 3 files |
 | Phase 04 P02 | 5min | 2 tasks | 6 files |
 | Phase 04 P04 | 4min | 2 tasks | 2 files |
+| Phase 05 P01 | 4min | 1 tasks | 5 files |
+| Phase 05 P03 | 5min | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -134,6 +136,10 @@ Recent decisions affecting current work:
 - [Phase 04]: Updated _build_workstream_entries to emit description and created fields with iso_date parameter
 - [Phase 04]: SUMMARY.md validation strips HTML comments and markdown headings before checking for content
 - [Phase 04]: task complete uses yaml.safe_dump to rewrite status.yaml (simple, sufficient for small YAML files)
+- [Phase 05]: Status command delegates stale artifact detection to compute_staleness from reconcile_anchors.py for consistency
+- [Phase 05]: Attention count = stale artifacts + open questions + flagged facts
+- [Phase 05]: Recent activity derived from timestamps across all state files with 14-day window
+- [Phase 05]: Section capping at 5 items with 'and N more' truncation in normal mode
 
 ### Pending Todos
 
@@ -146,6 +152,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T16:21:34.547Z
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-status-handoff-distribution/05-CONTEXT.md
+Last session: 2026-04-08T21:24:55.801Z
+Stopped at: Completed 05-01-PLAN.md
+Resume file: None

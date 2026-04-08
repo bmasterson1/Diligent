@@ -80,8 +80,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### State & Handoff
 
-- [ ] **STATE-01**: `diligent status` provides full state summary: DEAL.md context, TRUTH.md counts and stale flags, recent ingests, workstream status, artifact counts, open questions
-- [ ] **STATE-02**: Status output is plain text, sectioned, no color by default; --json flag for agent consumption; no emojis
+- [x] **STATE-01**: `diligent status` provides full state summary: DEAL.md context, TRUTH.md counts and stale flags, recent ingests, workstream status, artifact counts, open questions
+- [x] **STATE-02**: Status output is plain text, sectioned, no color by default; --json flag for agent consumption; no emojis
 - [ ] **STATE-03**: `diligent handoff` generates a single markdown document the analyst pastes into a fresh AI session
 - [ ] **STATE-04**: Handoff reads DEAL.md (full), STATE.md (full), WORKSTREAMS.md (full), recent TRUTH.md/SOURCES.md entries, open questions, and recent task SUMMARY.md files
 - [ ] **STATE-05**: "Recent" is configurable in config.json, defaults to everything touched in last 7 days plus everything flagged or stale
@@ -210,8 +210,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Q-03 | Phase 4 | Complete |
 | Q-04 | Phase 4 | Complete |
 | Q-05 | Phase 4 | Complete |
-| STATE-01 | Phase 5 | Pending |
-| STATE-02 | Phase 5 | Pending |
+| STATE-01 | Phase 5 | Complete |
+| STATE-02 | Phase 5 | Complete |
 | STATE-03 | Phase 5 | Pending |
 | STATE-04 | Phase 5 | Pending |
 | STATE-05 | Phase 5 | Pending |
