@@ -53,7 +53,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ART-06**: `diligent reconcile --workstream <name>` scopes reconciliation to one workstream
 - [x] **ART-07**: `diligent reconcile --strict` exits non-zero on any staleness (for scripted checks)
 - [x] **ART-08**: reconcile_anchors.py is the deterministic engine behind `diligent reconcile`
-- [ ] **ART-09**: artifact_scanner.py scans .docx files for embedded `{{truth:key}}` citation tags; opt-in via --scan flag on artifact register; .docx only in v1. Manual --references is the default and supported path. --scan is supplementary and experimental. Milestone 3 acceptance test runs against manual --references, not --scan.
+- [x] **ART-09**: artifact_scanner.py scans .docx files for embedded `{{truth:key}}` citation tags; opt-in via --scan flag on artifact register; .docx only in v1. Manual --references is the default and supported path. --scan is supplementary and experimental. Milestone 3 acceptance test runs against manual --references, not --scan.
 
 ### Workstreams
 
@@ -98,8 +98,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Cross-Cutting
 
-- [ ] **XC-01**: All commands return in under 2 seconds for typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
-- [ ] **XC-02**: `diligent reconcile` completes in under 10 seconds for typical deal folder
+- [x] **XC-01**: All commands return in under 2 seconds for typical deal folder (50-200 sources, 50-500 facts, 20-100 artifacts)
+- [x] **XC-02**: `diligent reconcile` completes in under 10 seconds for typical deal folder
 - [x] **XC-03**: No network requests, no API keys, no telemetry, no phone-home during normal operation
 - [x] **XC-04**: Source documents are read-only from diligent's perspective; the tool never modifies files the analyst placed in the deal folder
 - [x] **XC-05**: All state file writes validate the resulting file structure before committing; validation failure preserves prior state
@@ -195,7 +195,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ART-06 | Phase 3 | Complete |
 | ART-07 | Phase 3 | Complete |
 | ART-08 | Phase 3 | Complete |
-| ART-09 | Phase 3 | Pending |
+| ART-09 | Phase 3 | Complete |
 | WS-01 | Phase 4 | Pending |
 | WS-02 | Phase 4 | Pending |
 | WS-03 | Phase 4 | Pending |
@@ -222,8 +222,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DIST-04 | Phase 5 | Pending |
 | DIST-05 | Phase 5 | Pending |
 | DIST-06 | Phase 5 | Pending |
-| XC-01 | Phase 3 | Pending |
-| XC-02 | Phase 3 | Pending |
+| XC-01 | Phase 3 | Complete |
+| XC-02 | Phase 3 | Complete |
 | XC-03 | Phase 1 | Complete |
 | XC-04 | Phase 1 | Complete |
 | XC-05 | Phase 1 | Complete |
