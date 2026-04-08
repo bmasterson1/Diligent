@@ -60,9 +60,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **WS-01**: `diligent workstream new <name>` creates a workstream with subdirectory under .diligence/workstreams/ containing CONTEXT.md and RESEARCH.md
 - [ ] **WS-02**: `diligent workstream list` shows all workstreams with status and task count
 - [ ] **WS-03**: `diligent workstream show <name>` displays full workstream detail
-- [ ] **WS-04**: Pre-defined workstream templates shipped as defaults: financial, retention/commercial, technical, legal, HR, integration (6 total)
+- [x] **WS-04**: Pre-defined workstream templates shipped as defaults: financial, retention/commercial, technical, legal, HR, integration (6 total)
 - [ ] **WS-05**: Workstream customization at init time ("which workstreams do you want for this deal?")
-- [ ] **WS-06**: CLI reads state from files on every invocation; hand-edits to WORKSTREAMS.md are picked up on next read (CLI is convenience, not gate)
+- [x] **WS-06**: CLI reads state from files on every invocation; hand-edits to WORKSTREAMS.md are picked up on next read (CLI is convenience, not gate)
 
 ### Tasks
 
@@ -199,9 +199,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WS-01 | Phase 4 | Pending |
 | WS-02 | Phase 4 | Pending |
 | WS-03 | Phase 4 | Pending |
-| WS-04 | Phase 4 | Pending |
+| WS-04 | Phase 4 | Complete |
 | WS-05 | Phase 4 | Pending |
-| WS-06 | Phase 4 | Pending |
+| WS-06 | Phase 4 | Complete |
 | TASK-01 | Phase 4 | Pending |
 | TASK-02 | Phase 4 | Pending |
 | TASK-03 | Phase 4 | Pending |
