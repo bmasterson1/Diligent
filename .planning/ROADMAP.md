@@ -47,7 +47,7 @@ Plans:
   3. When `truth set` would change a value beyond tolerance, the verification gate stops, surfaces the discrepancy with both sources, and requires explicit confirmation before proceeding; rejection routes the discrepancy to the questions queue
   4. `diligent truth trace` shows full revision history for any fact: every value, source, date, and the diff between source documents
   5. `diligent sources list/show` and `diligent truth get/list/flag` all work with --json output and complete in under 2 seconds
-**Plans:** 5 plans
+**Plans:** 3/5 plans executed
 
 Plans:
 - [ ] 02-01-PLAN.md -- Model extensions (anchor field, QuestionEntry), QUESTIONS.md state layer, init/doctor 7-file updates
@@ -116,7 +116,7 @@ Phase 5 requires both Phase 3 and Phase 4.
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-04-07 |
-| 2. Sources and Truth | 0/5 | Planning complete | - |
+| 2. Sources and Truth | 3/5 | In Progress|  |
 | 3. Artifacts and Reconciliation | 0/2 | Not started | - |
 | 4. Workstreams, Tasks, and Questions | 0/3 | Not started | - |
 | 5. Status, Handoff, and Distribution | 0/2 | Not started | - |

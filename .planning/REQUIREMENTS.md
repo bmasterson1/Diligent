@@ -20,10 +20,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Sources
 
-- [ ] **SRC-01**: `diligent ingest <path>` logs a source document with date received, parties, workstream tags, and optional --supersedes pointer to a prior source ID
-- [ ] **SRC-02**: Source IDs follow `{DEAL_CODE}-{NNN}` convention (zero-padded, monotonic, never reused)
-- [ ] **SRC-03**: `diligent sources list` shows all registered sources with date and status
-- [ ] **SRC-04**: `diligent sources show <source-id>` displays full record for a single source
+- [x] **SRC-01**: `diligent ingest <path>` logs a source document with date received, parties, workstream tags, and optional --supersedes pointer to a prior source ID
+- [x] **SRC-02**: Source IDs follow `{DEAL_CODE}-{NNN}` convention (zero-padded, monotonic, never reused)
+- [x] **SRC-03**: `diligent sources list` shows all registered sources with date and status
+- [x] **SRC-04**: `diligent sources show <source-id>` displays full record for a single source
 - [ ] **SRC-05**: `diligent sources diff <id-a> <id-b>` diffs two source files using helper scripts
 - [ ] **SRC-06**: diff_excel_versions.py helper reports which sheets, named ranges, and cells differ between two Excel files
 - [ ] **SRC-07**: Ingest automatically invokes diff_excel_versions.py when the ingested file supersedes a known prior Excel source
@@ -168,10 +168,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INIT-06 | Phase 1 | Complete |
 | INIT-07 | Phase 1 | Complete |
 | INIT-08 | Phase 1 | Complete |
-| SRC-01 | Phase 2 | Pending |
-| SRC-02 | Phase 2 | Pending |
-| SRC-03 | Phase 2 | Pending |
-| SRC-04 | Phase 2 | Pending |
+| SRC-01 | Phase 2 | Complete |
+| SRC-02 | Phase 2 | Complete |
+| SRC-03 | Phase 2 | Complete |
+| SRC-04 | Phase 2 | Complete |
 | SRC-05 | Phase 2 | Pending |
 | SRC-06 | Phase 2 | Pending |
 | SRC-07 | Phase 2 | Pending |

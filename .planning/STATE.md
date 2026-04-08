@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 2
 current_phase_name: sources and truth
-current_plan: 2
+current_plan: 4
 status: executing
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-04-08T00:52:02.832Z"
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-04-08T01:00:41.156Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 8
-  completed_plans: 4
+  completed_plans: 6
   percent: 33
 ---
 
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 **Current Phase:** 2
 **Current Phase Name:** sources and truth
 **Total Phases:** 5
-**Current Plan:** 2
+**Current Plan:** 4
 **Total Plans in Phase:** 5
 **Status:** Ready to execute
 **Last Activity:** 2026-04-08
@@ -61,6 +61,8 @@ Progress: [|||.......] 33%
 | Phase 01 P02 | 6min | 2 tasks | 14 files |
 | Phase 01 P03 | 7min | 2 tasks | 14 files |
 | Phase 02 P01 | 7min | 2 tasks | 12 files |
+| Phase 02 P02 | 4min | 2 tasks | 4 files |
+| Phase 02 P03 | 5min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -84,6 +86,13 @@ Recent decisions affecting current work:
 - [Phase 02]: anchor field omitted from YAML output when False for backward compatibility
 - [Phase 02]: QuestionEntry context field is Optional[dict] for gate rejection data
 - [Phase 02]: questions.py replicates H2+YAML pipeline per Phase 1 decision (no shared utility)
+- [Phase 02]: ingest registered as top-level LazyGroup command matching diligent ingest <path> UX
+- [Phase 02]: Source ID generation scans SOURCES.md max (self-healing, no counter file)
+- [Phase 02]: Relative paths in SOURCES.md stored as posix strings for cross-platform OneDrive sync
+- [Phase 02]: DILIGENT_CWD env var for test isolation: commands check env before walking up from cwd
+- [Phase 02]: compute_gate_result is a pure function returning None or dict, keeping gate logic testable without CLI
+- [Phase 02]: Supersedes chain inserts at position 0 (most recent first) preserving existing chain entries
+- [Phase 02]: Gate rejection question text includes delta description for human readability
 
 ### Pending Todos
 
@@ -96,6 +105,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T00:52:02.830Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-04-08T01:00:41.154Z
+Stopped at: Completed 02-03-PLAN.md
 Resume file: None
