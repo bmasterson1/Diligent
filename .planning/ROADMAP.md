@@ -122,10 +122,11 @@ Plans:
   4. `reconcile_cmd.py` displays actual reason text for flagged facts, not the fact key
   5. REQUIREMENTS.md wording for ART-02 and ART-09 reflects actual implementation (ARTIFACTS.md, auto-scan)
   6. Orphaned `write_state` usage is removed or STATE.MD is wired to update on state changes
-**Plans:** 0/1 plans complete
+**Plans:** 2 plans
 
 Plans:
-- [ ] 06-01-PLAN.md -- Integration fixes (INT-01, INT-02, INT-03), tech debt cleanup (reconcile cosmetic, stale docs, orphaned write_state)
+- [ ] 06-01-PLAN.md -- Fix sources_cmd._find_diligence_dir (INT-01) and status_cmd config read (INT-02)
+- [ ] 06-02-PLAN.md -- Fix skill file signature (INT-03), reconcile flagged reason, write_state orphan, REQUIREMENTS.md verification
 
 ## Progress
 
@@ -144,4 +145,4 @@ Phase 6 is a gap closure phase from the v1.0 milestone audit; runs after Phase 5
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
 | 4. Workstreams, Tasks, and Questions | 3/4 | In Progress|  |
 | 5. Status, Handoff, and Distribution | 4/4 | Complete | 2026-04-08 |
-| 6. Integration and Cleanup | 0/1 | Pending |  |
+| 6. Integration and Cleanup | 0/2 | Pending |  |
