@@ -4,17 +4,17 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 5
 current_phase_name: status, handoff, and distribution
-current_plan: 3
+current_plan: 4
 status: executing
-stopped_at: Completed 05-03-PLAN.md
-last_updated: "2026-04-08T21:25:15.393Z"
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-04-08T21:40:00.000Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 20
-  completed_plans: 18
-  percent: 85
+  completed_plans: 19
+  percent: 95
 ---
 
 # Project State
@@ -31,13 +31,13 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 **Current Phase:** 5
 **Current Phase Name:** status, handoff, and distribution
 **Total Phases:** 5
-**Current Plan:** 3
+**Current Plan:** 4
 **Total Plans in Phase:** 4
-**Status:** Ready to execute
+**Status:** Executing
 **Last Activity:** 2026-04-08
-**Last Activity Description:** Completed 05-01 status command and time utilities
+**Last Activity Description:** Completed 05-02 handoff command and clipboard helper
 
-Progress: [█████████░] 85%
+Progress: [█████████░] 95%
 
 ## Performance Metrics
 
@@ -74,6 +74,7 @@ Progress: [█████████░] 85%
 | Phase 04 P02 | 5min | 2 tasks | 6 files |
 | Phase 04 P04 | 4min | 2 tasks | 2 files |
 | Phase 05 P01 | 4min | 1 tasks | 5 files |
+| Phase 05 P02 | 8min | 1 tasks | 5 files |
 | Phase 05 P03 | 5min | 2 tasks | 10 files |
 
 ## Accumulated Context
@@ -143,6 +144,11 @@ Recent decisions affecting current work:
 - [Phase 05]: string.replace for {{DILIGENT_PATH}} parameterization instead of string.Template (double braces conflict)
 - [Phase 05]: install is a global command with no _find_diligence_dir dependency (not deal-scoped)
 - [Phase 05]: Skill files grouped by domain (dd:truth, dd:sources, etc.) not one-per-command
+- [Phase 05]: Handoff instruction header uses string.Template for ${DEAL_CODE} substitution
+- [Phase 05]: Handoff default time window = config.recent_window_days * 2 (doubled from config default)
+- [Phase 05]: Section builders return (markdown_str, list[dict]) tuples for dual markdown/JSON output
+- [Phase 05]: Flagged facts and open questions always included in handoff regardless of time window
+- [Phase 05]: Clipboard helper catches all exceptions and returns bool (never raises)
 
 ### Pending Todos
 
@@ -155,6 +161,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T21:25:15.390Z
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-04-08T21:40:00.000Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None

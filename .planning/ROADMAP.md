@@ -104,9 +104,9 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 05-01-PLAN.md -- Status command with time utilities, 5-section deal summary, --verbose, --json
-- [ ] 05-02-PLAN.md -- Handoff command with clipboard helper, instruction header, time-window filtering, --clip
-- [ ] 05-03-PLAN.md -- Skill template files (6 domains) and install command with --claude-code, --antigravity, --uninstall
+- [x] 05-01-PLAN.md -- Status command with time utilities, 5-section deal summary, --verbose, --json
+- [x] 05-02-PLAN.md -- Handoff command with clipboard helper, instruction header, time-window filtering, --clip
+- [x] 05-03-PLAN.md -- Skill template files (6 domains) and install command with --claude-code, --antigravity, --uninstall
 - [ ] 05-04-PLAN.md -- PyPI name resolution, pyproject.toml packaging, README, build verification
 
 ## Progress
@@ -124,4 +124,4 @@ Phase 5 requires both Phase 3 and Phase 4.
 | 2. Sources and Truth | 3/5 | In Progress|  |
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
 | 4. Workstreams, Tasks, and Questions | 3/4 | In Progress|  |
-| 5. Status, Handoff, and Distribution | 0/4 | Not started | - |
+| 5. Status, Handoff, and Distribution | 3/4 | In Progress | - |
