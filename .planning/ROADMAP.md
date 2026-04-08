@@ -101,13 +101,13 @@ Plans:
   3. `pipx install diligent` works on a clean Windows machine; the package is published to PyPI
   4. `diligent install --claude-code` and `--antigravity` drop parameterized SKILL.md files into the correct IDE directories; `--uninstall` removes them
   5. A second person on a clean machine can go from zero to working `.diligence/` in under five minutes following only the README (catches install-path bugs, missing dependencies, and documentation gaps)
-**Plans:** 4 plans
+**Plans:** 4/4 plans complete
 
 Plans:
 - [x] 05-01-PLAN.md -- Status command with time utilities, 5-section deal summary, --verbose, --json
 - [x] 05-02-PLAN.md -- Handoff command with clipboard helper, instruction header, time-window filtering, --clip
 - [x] 05-03-PLAN.md -- Skill template files (6 domains) and install command with --claude-code, --antigravity, --uninstall
-- [ ] 05-04-PLAN.md -- PyPI name resolution, pyproject.toml packaging, README, build verification
+- [x] 05-04-PLAN.md -- PyPI name resolution, pyproject.toml packaging, README, build verification
 
 ## Progress
 
@@ -124,4 +124,4 @@ Phase 5 requires both Phase 3 and Phase 4.
 | 2. Sources and Truth | 3/5 | In Progress|  |
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
 | 4. Workstreams, Tasks, and Questions | 3/4 | In Progress|  |
-| 5. Status, Handoff, and Distribution | 3/4 | In Progress | - |
+| 5. Status, Handoff, and Distribution | 4/4 | Complete | 2026-04-08 |

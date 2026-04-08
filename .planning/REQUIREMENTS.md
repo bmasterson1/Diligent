@@ -89,7 +89,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Distribution
 
-- [ ] **DIST-01**: Package published to PyPI, installable via `pipx install diligent` (name resolution required before first publish)
+- [x] **DIST-01**: Package published to PyPI, installable via `pipx install diligent-dd` (resolved: diligent-dd)
 - [x] **DIST-02**: `diligent install --antigravity` drops SKILL.md files into Antigravity's skills directory (verify install path before building)
 - [x] **DIST-03**: `diligent install --claude-code` drops SKILL.md files into Claude Code's skills directory
 - [x] **DIST-04**: `diligent install --uninstall` removes installed skill files cleanly
@@ -216,7 +216,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STATE-04 | Phase 5 | Complete |
 | STATE-05 | Phase 5 | Complete |
 | STATE-06 | Phase 5 | Complete |
-| DIST-01 | Phase 5 | Pending |
+| DIST-01 | Phase 5 | Complete |
 | DIST-02 | Phase 5 | Complete |
 | DIST-03 | Phase 5 | Complete |
 | DIST-04 | Phase 5 | Complete |

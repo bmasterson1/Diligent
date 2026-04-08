@@ -5,16 +5,16 @@ milestone_name: milestone
 current_phase: 5
 current_phase_name: status, handoff, and distribution
 current_plan: 4
-status: executing
-stopped_at: Completed 05-02-PLAN.md
-last_updated: "2026-04-08T21:40:00.000Z"
+status: complete
+stopped_at: Completed 05-04-PLAN.md
+last_updated: "2026-04-08T22:08:00.000Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 20
-  completed_plans: 19
-  percent: 95
+  completed_plans: 20
+  percent: 100
 ---
 
 # Project State
@@ -31,13 +31,13 @@ See: .planning/PROJECT.md (updated 2026-04-07)
 **Current Phase:** 5
 **Current Phase Name:** status, handoff, and distribution
 **Total Phases:** 5
-**Current Plan:** 4
+**Current Plan:** 4 (complete)
 **Total Plans in Phase:** 4
-**Status:** Executing
+**Status:** Complete
 **Last Activity:** 2026-04-08
-**Last Activity Description:** Completed 05-02 handoff command and clipboard helper
+**Last Activity Description:** Completed 05-04 PyPI packaging and README
 
-Progress: [█████████░] 95%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -76,6 +76,7 @@ Progress: [█████████░] 95%
 | Phase 05 P01 | 4min | 1 tasks | 5 files |
 | Phase 05 P02 | 8min | 1 tasks | 5 files |
 | Phase 05 P03 | 5min | 2 tasks | 10 files |
+| Phase 05 P04 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -149,6 +150,8 @@ Recent decisions affecting current work:
 - [Phase 05]: Section builders return (markdown_str, list[dict]) tuples for dual markdown/JSON output
 - [Phase 05]: Flagged facts and open questions always included in handoff regardless of time window
 - [Phase 05]: Clipboard helper catches all exceptions and returns bool (never raises)
+- [Phase 05]: PyPI package name is diligent-dd (diligent was taken); CLI entry point remains `diligent`
+- [Phase 05]: Explicit hatchling wheel packages config ensures skill .md files ship in wheel
 
 ### Pending Todos
 
@@ -156,11 +159,11 @@ None yet.
 
 ### Blockers/Concerns
 
-- PyPI name "diligent" may be taken; must resolve before pyproject.toml is written (pre-Phase 1)
+- ~~PyPI name "diligent" may be taken~~ RESOLVED: Using diligent-dd
 - OneDrive atomic write behavior must be tested on actual synced folder during Phase 1
 
 ## Session Continuity
 
-Last session: 2026-04-08T21:40:00.000Z
-Stopped at: Completed 05-02-PLAN.md
+Last session: 2026-04-08T22:08:00.000Z
+Stopped at: Completed 05-04-PLAN.md (all plans complete)
 Resume file: None
