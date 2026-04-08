@@ -17,6 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: Artifacts and Reconciliation** - Deliverable tracking and the dependency-graph staleness engine
 - [ ] **Phase 4: Workstreams, Tasks, and Questions** - Organizational layer for structuring deal work
 - [ ] **Phase 5: Status, Handoff, and Distribution** - Aggregation commands, AI session restore, skill files, and PyPI ship
+- [ ] **Phase 6: Integration and Cleanup** - Fix cross-phase integration inconsistencies and accumulated tech debt before milestone close
 
 ## Phase Details
 
@@ -109,14 +110,32 @@ Plans:
 - [x] 05-03-PLAN.md -- Skill template files (6 domains) and install command with --claude-code, --antigravity, --uninstall
 - [x] 05-04-PLAN.md -- PyPI name resolution, pyproject.toml packaging, README, build verification
 
+### Phase 6: Integration and Cleanup
+**Goal**: All cross-phase integration is consistent and accumulated tech debt is resolved before milestone close
+**Depends on**: Phase 5
+**Requirements**: SRC-01, SRC-03, SRC-04, SRC-05, STATE-05, TASK-03, DIST-05
+**Gap Closure:** Closes INT-01, INT-02, INT-03, and broken "AI agent task completion" flow from v1.0 audit
+**Success Criteria** (what must be TRUE):
+  1. `sources_cmd._find_diligence_dir` walks parent directories and supports `DILIGENT_CWD`, consistent with all 10 other command modules
+  2. `status_cmd._build_recent_activity` reads `config.recent_window_days` instead of hardcoding 14 days
+  3. `dd_workstreams.md` skill file documents the correct `task complete <ws> <task_id>` signature; AI agents can complete tasks without Click usage errors
+  4. `reconcile_cmd.py` displays actual reason text for flagged facts, not the fact key
+  5. REQUIREMENTS.md wording for ART-02 and ART-09 reflects actual implementation (ARTIFACTS.md, auto-scan)
+  6. Orphaned `write_state` usage is removed or STATE.MD is wired to update on state changes
+**Plans:** 0/1 plans complete
+
+Plans:
+- [ ] 06-01-PLAN.md -- Integration fixes (INT-01, INT-02, INT-03), tech debt cleanup (reconcile cosmetic, stale docs, orphaned write_state)
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 Phase 4 depends on Phase 2 (verification gate routes to questions queue), NOT on Phase 3.
 Phases 3 and 4 can run in parallel or swap order based on dogfooding feedback after Phase 2.
 Default order keeps 3 before 4 because reconcile is the feature that justifies the tool.
 Phase 5 requires both Phase 3 and Phase 4.
+Phase 6 is a gap closure phase from the v1.0 milestone audit; runs after Phase 5.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -125,3 +144,4 @@ Phase 5 requires both Phase 3 and Phase 4.
 | 3. Artifacts and Reconciliation | 2/4 | In Progress|  |
 | 4. Workstreams, Tasks, and Questions | 3/4 | In Progress|  |
 | 5. Status, Handoff, and Distribution | 4/4 | Complete | 2026-04-08 |
+| 6. Integration and Cleanup | 0/1 | Pending |  |

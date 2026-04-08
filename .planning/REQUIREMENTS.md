@@ -46,14 +46,14 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Artifacts
 
 - [x] **ART-01**: `diligent artifact register <path> --references <key1,key2,...>` registers a deliverable with explicit fact dependencies
-- [x] **ART-02**: artifacts/manifest.json stores registered artifacts with fields for path, references, workstream, registration date, last refresh timestamp, and staleness status
+- [x] **ART-02**: ARTIFACTS.md (H2+YAML format, consistent with other state files) stores registered artifacts with fields for path, references, workstream, registration date, last refresh timestamp, and staleness status
 - [x] **ART-03**: `diligent artifact list` shows all registered artifacts; supports --stale filter
 - [x] **ART-04**: `diligent artifact refresh <path>` marks artifact as refreshed (updates last refresh timestamp)
 - [x] **ART-05**: `diligent reconcile` walks the dependency graph (source -> fact -> artifact), reports stale artifacts with structured output: which fact changed, when, from what source, how many days stale
 - [x] **ART-06**: `diligent reconcile --workstream <name>` scopes reconciliation to one workstream
 - [x] **ART-07**: `diligent reconcile --strict` exits non-zero on any staleness (for scripted checks)
 - [x] **ART-08**: reconcile_anchors.py is the deterministic engine behind `diligent reconcile`
-- [x] **ART-09**: artifact_scanner.py scans .docx files for embedded `{{truth:key}}` citation tags; opt-in via --scan flag on artifact register; .docx only in v1. Manual --references is the default and supported path. --scan is supplementary and experimental. Milestone 3 acceptance test runs against manual --references, not --scan.
+- [x] **ART-09**: artifact_scanner.py scans .docx files for embedded `{{truth:key}}` citation tags; auto-scans on .docx registration (more integrated than original opt-in design); .docx only in v1. Manual --references is the default and supported path. --scan is supplementary and experimental. Milestone 3 acceptance test runs against manual --references, not --scan.
 
 ### Workstreams
 
@@ -168,11 +168,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INIT-06 | Phase 1 | Complete |
 | INIT-07 | Phase 1 | Complete |
 | INIT-08 | Phase 1 | Complete |
-| SRC-01 | Phase 2 | Complete |
+| SRC-01 | Phase 2, Phase 6 (INT-01) | Complete |
 | SRC-02 | Phase 2 | Complete |
-| SRC-03 | Phase 2 | Complete |
-| SRC-04 | Phase 2 | Complete |
-| SRC-05 | Phase 2 | Complete |
+| SRC-03 | Phase 2, Phase 6 (INT-01) | Complete |
+| SRC-04 | Phase 2, Phase 6 (INT-01) | Complete |
+| SRC-05 | Phase 2, Phase 6 (INT-01) | Complete |
 | SRC-06 | Phase 2 | Complete |
 | SRC-07 | Phase 2 | Complete |
 | TRUTH-01 | Phase 2 | Complete |
@@ -204,7 +204,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WS-06 | Phase 4 | Complete |
 | TASK-01 | Phase 4 | Complete |
 | TASK-02 | Phase 4 | Complete |
-| TASK-03 | Phase 4 | Complete |
+| TASK-03 | Phase 4, Phase 6 (INT-03) | Complete |
 | Q-01 | Phase 4 | Complete |
 | Q-02 | Phase 4 | Complete |
 | Q-03 | Phase 4 | Complete |
@@ -214,13 +214,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STATE-02 | Phase 5 | Complete |
 | STATE-03 | Phase 5 | Complete |
 | STATE-04 | Phase 5 | Complete |
-| STATE-05 | Phase 5 | Complete |
+| STATE-05 | Phase 5, Phase 6 (INT-02) | Complete |
 | STATE-06 | Phase 5 | Complete |
 | DIST-01 | Phase 5 | Complete |
 | DIST-02 | Phase 5 | Complete |
 | DIST-03 | Phase 5 | Complete |
 | DIST-04 | Phase 5 | Complete |
-| DIST-05 | Phase 5 | Complete |
+| DIST-05 | Phase 5, Phase 6 (INT-03) | Complete |
 | DIST-06 | Phase 5 | Complete |
 | XC-01 | Phase 3 | Complete |
 | XC-02 | Phase 3 | Complete |
