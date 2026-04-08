@@ -90,11 +90,11 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Distribution
 
 - [ ] **DIST-01**: Package published to PyPI, installable via `pipx install diligent` (name resolution required before first publish)
-- [ ] **DIST-02**: `diligent install --antigravity` drops SKILL.md files into Antigravity's skills directory (verify install path before building)
-- [ ] **DIST-03**: `diligent install --claude-code` drops SKILL.md files into Claude Code's skills directory
-- [ ] **DIST-04**: `diligent install --uninstall` removes installed skill files cleanly
-- [ ] **DIST-05**: SKILL.md files parameterized with absolute path to diligent CLI binary at install time
-- [ ] **DIST-06**: One SKILL.md per CLI command, prefixed `dd:` in runtime command namespace
+- [x] **DIST-02**: `diligent install --antigravity` drops SKILL.md files into Antigravity's skills directory (verify install path before building)
+- [x] **DIST-03**: `diligent install --claude-code` drops SKILL.md files into Claude Code's skills directory
+- [x] **DIST-04**: `diligent install --uninstall` removes installed skill files cleanly
+- [x] **DIST-05**: SKILL.md files parameterized with absolute path to diligent CLI binary at install time
+- [x] **DIST-06**: One SKILL.md per CLI command, prefixed `dd:` in runtime command namespace
 
 ### Cross-Cutting
 
@@ -217,11 +217,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STATE-05 | Phase 5 | Pending |
 | STATE-06 | Phase 5 | Pending |
 | DIST-01 | Phase 5 | Pending |
-| DIST-02 | Phase 5 | Pending |
-| DIST-03 | Phase 5 | Pending |
-| DIST-04 | Phase 5 | Pending |
-| DIST-05 | Phase 5 | Pending |
-| DIST-06 | Phase 5 | Pending |
+| DIST-02 | Phase 5 | Complete |
+| DIST-03 | Phase 5 | Complete |
+| DIST-04 | Phase 5 | Complete |
+| DIST-05 | Phase 5 | Complete |
+| DIST-06 | Phase 5 | Complete |
 | XC-01 | Phase 3 | Complete |
 | XC-02 | Phase 3 | Complete |
 | XC-03 | Phase 1 | Complete |

@@ -6,8 +6,8 @@ current_phase: 5
 current_phase_name: status, handoff, and distribution
 current_plan: 3
 status: executing
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-04-08T21:25:07.121Z"
+stopped_at: Completed 05-03-PLAN.md
+last_updated: "2026-04-08T21:25:15.393Z"
 last_activity: 2026-04-08
 progress:
   total_phases: 5
@@ -140,6 +140,9 @@ Recent decisions affecting current work:
 - [Phase 05]: Attention count = stale artifacts + open questions + flagged facts
 - [Phase 05]: Recent activity derived from timestamps across all state files with 14-day window
 - [Phase 05]: Section capping at 5 items with 'and N more' truncation in normal mode
+- [Phase 05]: string.replace for {{DILIGENT_PATH}} parameterization instead of string.Template (double braces conflict)
+- [Phase 05]: install is a global command with no _find_diligence_dir dependency (not deal-scoped)
+- [Phase 05]: Skill files grouped by domain (dd:truth, dd:sources, etc.) not one-per-command
 
 ### Pending Todos
 
@@ -152,6 +155,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T21:24:55.801Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-04-08T21:25:15.390Z
+Stopped at: Completed 05-03-PLAN.md
 Resume file: None
