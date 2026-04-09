@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-current_phase: 06
-current_phase_name: integration and cleanup
-current_plan: Not started
-status: completed
-stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-04-08T23:11:44.478Z"
-last_activity: 2026-04-08
+milestone_name: MVP
+current_phase: null
+current_phase_name: null
+current_plan: null
+status: milestone_complete
+stopped_at: v1.0 milestone archived
+last_updated: "2026-04-09"
+last_activity: 2026-04-09
 progress:
   total_phases: 6
   completed_phases: 6
@@ -21,156 +21,55 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-07)
+See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** When the analyst types one command, they get a definitive answer about what is current truth and which deliverables need to be refreshed.
-**Current focus:** Phase 1: Foundation
+**Current focus:** v1.0 shipped. Planning next milestone.
 
 ## Current Position
 
-**Current Phase:** 06
-**Current Phase Name:** integration and cleanup
+**Milestone:** v1.0 MVP -- SHIPPED 2026-04-09
 **Total Phases:** 6
-**Current Plan:** Not started
-**Total Plans in Phase:** 2
-**Status:** Milestone complete
-**Last Activity:** 2026-04-08
-**Last Activity Description:** Phase 06 complete
+**Total Plans:** 22
+**Status:** Milestone complete and archived
+**Last Activity:** 2026-04-09
 
-Progress: [██████████] 100%
+Progress: [##########] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+- Total plans completed: 22
+- Average duration: 5.5 min/plan
+- Total execution time: ~121 minutes
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-- Last 5 plans: none
-- Trend: -
-
-*Updated after each plan completion*
-| Phase 01 P01 | 7min | 2 tasks | 18 files |
-| Phase 01 P02 | 6min | 2 tasks | 14 files |
-| Phase 01 P03 | 7min | 2 tasks | 14 files |
-| Phase 02 P01 | 7min | 2 tasks | 12 files |
-| Phase 02 P02 | 4min | 2 tasks | 4 files |
-| Phase 02 P03 | 5min | 2 tasks | 5 files |
-| Phase 02 P04 | 5min | 2 tasks | 2 files |
-| Phase 02 P05 | 5min | 2 tasks | 6 files |
-| Phase 03 P01 | 8min | 2 tasks | 8 files |
-| Phase 03 P02 | 7min | 2 tasks | 3 files |
-| Phase 03 P03 | 8min | 2 tasks | 5 files |
-| Phase 03 P04 | 6min | 2 tasks | 5 files |
-| Phase 04 P01 | 5min | 2 tasks | 15 files |
-| Phase 04 P03 | 5min | 2 tasks | 3 files |
-| Phase 04 P02 | 5min | 2 tasks | 6 files |
-| Phase 04 P04 | 4min | 2 tasks | 2 files |
-| Phase 05 P01 | 4min | 1 tasks | 5 files |
-| Phase 05 P02 | 8min | 1 tasks | 5 files |
-| Phase 05 P03 | 5min | 2 tasks | 10 files |
-| Phase 05 P04 | 5min | 2 tasks | 2 files |
-| Phase 06 P02 | 3min | 2 tasks | 5 files |
-| Phase 06 P01 | 3min | 2 tasks | 4 files |
+| Phase 01 | 3 | 20min | 6.7min |
+| Phase 02 | 5 | 26min | 5.2min |
+| Phase 03 | 4 | 29min | 7.3min |
+| Phase 04 | 4 | 19min | 4.8min |
+| Phase 05 | 4 | 22min | 5.5min |
+| Phase 06 | 2 | 6min | 3.0min |
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- TRUTH.md is the most important file in the system; every design decision filters through serving its discipline
-- Build order: models -> state layer -> commands -> cross-cutting (reconcile, status, doctor)
-- Verification gate (TRUTH-04) is the single most important behavior in the CLI
-- [Phase 01]: LazyGroup defers imports at group creation, not during help (Click 8.x calls get_command for help text)
-- [Phase 01]: Stub command modules needed for init, doctor, config to satisfy LazyGroup help resolution
-- [Phase 01]: Atomic write tracks fd ownership to handle fdopen failure cleanup on Windows
-- [Phase 01]: TRUTH.md writer manually quotes value field to prevent YAML type coercion of financial data
-- [Phase 01]: All state file writers include validate_fn that re-parses output before atomic_write commits
-- [Phase 01]: H2 + fenced YAML parsing pipeline replicated per module rather than shared utility for readability
-- [Phase 01]: Doctor performs deep fenced YAML integrity check beyond what read_truth returns, catching corrupt entries the reader silently skips
-- [Phase 01]: Config set uses type coercion (int, float, string) rather than requiring explicit --type flag
-- [Phase 01]: Added __main__.py for python -m diligent support, enabling subprocess-based startup benchmark
-- [Phase 02]: anchor field omitted from YAML output when False for backward compatibility
-- [Phase 02]: QuestionEntry context field is Optional[dict] for gate rejection data
-- [Phase 02]: questions.py replicates H2+YAML pipeline per Phase 1 decision (no shared utility)
-- [Phase 02]: ingest registered as top-level LazyGroup command matching diligent ingest <path> UX
-- [Phase 02]: Source ID generation scans SOURCES.md max (self-healing, no counter file)
-- [Phase 02]: Relative paths in SOURCES.md stored as posix strings for cross-platform OneDrive sync
-- [Phase 02]: DILIGENT_CWD env var for test isolation: commands check env before walking up from cwd
-- [Phase 02]: compute_gate_result is a pure function returning None or dict, keeping gate logic testable without CLI
-- [Phase 02]: Supersedes chain inserts at position 0 (most recent first) preserving existing chain entries
-- [Phase 02]: Gate rejection question text includes delta description for human readability
-- [Phase 02]: Staleness detection cross-references SOURCES.md supersedes chains rather than timestamp comparison
-- [Phase 02]: Summary line counts all facts regardless of active filters for consistent totals
-- [Phase 02]: Flag events in trace timeline appear after current value entry, before supersedes chain
-- [Phase 02]: Source path resolution falls back to source ID string when source not found in SOURCES.md
-- [Phase 02]: openpyxl DefinedNameDict API uses .keys() not .definedName in 3.1.5+
-- [Phase 02]: Test fixtures created programmatically in tmp_path, no binary fixtures in git
-- [Phase 02]: Auto-diff on ingest only fires for Excel-to-Excel, wrapped in try/except
-- [Phase 03]: ArtifactEntry YAML writer manually quotes references and scanner_findings to prevent type coercion
-- [Phase 03]: artifacts.py replicates H2+YAML pipeline per Phase 1 decision (no shared utility)
-- [Phase 03]: Doctor cross-file checks: WARNING severity for missing truth keys and disk paths in ARTIFACTS.md
-- [Phase 03]: _check_cross_refs extended with diligence_dir parameter for artifact path-on-disk validation
-- [Phase 03]: Staleness is ISO date string comparison (lexicographic works for ISO 8601)
-- [Phase 03]: Source-superseded staleness uses superseded_by index mapping old source ID to new SourceEntry
-- [Phase 03]: Flagged facts produce ADVISORY status (not STALE), per CONTEXT.md spec
-- [Phase 03]: Summary line always counts all artifacts regardless of active filters
-- [Phase 03]: reconcile_anchors.py is a pure function with zero I/O imports for maximum testability
-- [Phase 03]: Source-superseded only fires when superseding source date > artifact last_refreshed (temporal guard)
-- [Phase 03]: Flagged facts are strictly advisory: never set is_stale or affect exit code without --strict
-- [Phase 03]: reconcile registered as top-level LazyGroup command matching diligent reconcile UX
-- [Phase 03]: Scanner runs automatically on .docx registrations with no --scan flag
-- [Phase 03]: --references made optional for .docx scanner fallback; non-.docx validates in command logic
-- [Phase 03]: Performance benchmarks use deterministic random seeds for reproducible scale generation
-- [Phase 04]: Conditional YAML emission: description/created omitted when empty string; answer fields omitted when None
-- [Phase 04]: Tailored workstream templates are plain .md files with hardcoded H1; generic fallback uses string.Template
-- [Phase 04]: Answer fields placed after context in QuestionEntry for backward compat with positional construction
-- [Phase 04]: ask and answer are top-level Click commands; questions is a group with list subcommand
-- [Phase 04]: Owner validation is case-sensitive; summary line counts all questions regardless of active filters
-- [Phase 04]: Workstream subdirectory creation in init is non-fatal: wrapped in try/except after state files
-- [Phase 04]: Updated _build_workstream_entries to emit description and created fields with iso_date parameter
-- [Phase 04]: SUMMARY.md validation strips HTML comments and markdown headings before checking for content
-- [Phase 04]: task complete uses yaml.safe_dump to rewrite status.yaml (simple, sufficient for small YAML files)
-- [Phase 05]: Status command delegates stale artifact detection to compute_staleness from reconcile_anchors.py for consistency
-- [Phase 05]: Attention count = stale artifacts + open questions + flagged facts
-- [Phase 05]: Recent activity derived from timestamps across all state files with 14-day window
-- [Phase 05]: Section capping at 5 items with 'and N more' truncation in normal mode
-- [Phase 05]: string.replace for {{DILIGENT_PATH}} parameterization instead of string.Template (double braces conflict)
-- [Phase 05]: install is a global command with no _find_diligence_dir dependency (not deal-scoped)
-- [Phase 05]: Skill files grouped by domain (dd:truth, dd:sources, etc.) not one-per-command
-- [Phase 05]: Handoff instruction header uses string.Template for ${DEAL_CODE} substitution
-- [Phase 05]: Handoff default time window = config.recent_window_days * 2 (doubled from config default)
-- [Phase 05]: Section builders return (markdown_str, list[dict]) tuples for dual markdown/JSON output
-- [Phase 05]: Flagged facts and open questions always included in handoff regardless of time window
-- [Phase 05]: Clipboard helper catches all exceptions and returns bool (never raises)
-- [Phase 05]: PyPI package name is diligent-dd (diligent was taken); CLI entry point remains `diligent`
-- [Phase 05]: Explicit hatchling wheel packages config ensures skill .md files ship in wheel
-- [Phase 06]: Reused StaleFactInfo.old_value for flagged reason rather than adding a new dataclass field
-- [Phase 06]: Kept write_state as documented internal utility for v1 rather than removing or wiring it
-- [Phase 06]: ART-02 and ART-09 verified accurate, no REQUIREMENTS.md text changes needed
-- [Phase 06]: Replicated canonical _find_diligence_dir from truth_cmd.py into sources_cmd.py (per Phase 1 decision: no shared utility)
-- [Phase 06]: status_cmd uses lazy import for read_config (consistent with other lazy imports in that module)
+Decisions logged in PROJECT.md Key Decisions table. 12 key decisions, all marked Good after v1.0.
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-- ~~PyPI name "diligent" may be taken~~ RESOLVED: Using diligent-dd
-- OneDrive atomic write behavior must be tested on actual synced folder during Phase 1
+None. PyPI name resolved as diligent-dd.
 
 ## Session Continuity
 
-Last session: 2026-04-08T23:07:01.841Z
-Stopped at: Completed 06-01-PLAN.md
+Last session: 2026-04-09
+Stopped at: v1.0 milestone archived
 Resume file: None

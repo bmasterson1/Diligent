@@ -12,29 +12,20 @@ When the analyst types one command, they get a definitive answer about what is c
 
 ### Validated
 
-(None yet. Ship to validate.)
+- INIT-01..08: CLI scaffold, state roundtrip, doctor, config, pyproject, atomic writes, schema version, lazy startup -- v1.0
+- SRC-01..07: Source ingestion with auto-diff, monotonic IDs, list/show/diff, Excel/Word helpers -- v1.0
+- TRUTH-01..12: Truth set/get/list/trace/flag, verification gate, tolerance config, append-only, quoted strings, computed-by/notes -- v1.0
+- ART-01..09: Artifact register/list/refresh, reconcile engine, workstream filter, strict mode, docx scanner -- v1.0
+- WS-01..06: Workstream new/list/show, 6 tailored templates, init customization, hand-edit support -- v1.0
+- TASK-01..03: Task new/list/complete with directory-based storage -- v1.0
+- Q-01..05: Ask/answer/questions list, owner taxonomy, gate rejection routing -- v1.0
+- STATE-01..06: Status summary, plain text/JSON, handoff with time-window filtering, paste buffer output -- v1.0
+- DIST-01..06: PyPI as diligent-dd, skill file install for Antigravity/Claude Code, parameterized paths -- v1.0
+- XC-01..08: Performance (<2s/<10s), no network, read-only sources, atomic writes, --json, no prompts, BSL 1.1 -- v1.0
 
 ### Active
 
-- [ ] CLI scaffolds `.diligence/` directory with all core state files via `diligent init`
-- [ ] State file readers/writers round-trip all six core files (DEAL.md, TRUTH.md, SOURCES.md, WORKSTREAMS.md, STATE.md, config.json)
-- [ ] `diligent doctor` validates file integrity and reports corruption
-- [ ] `diligent ingest` logs source documents with supersedes chain logic
-- [ ] `diligent sources list/show/diff` commands for source document management
-- [ ] `diligent truth set/get/list/trace/flag` commands for fact management with citation tracking
-- [ ] TRUTH.md is append-only at the entry level: updates push prior values into supersedes chain
-- [ ] `diligent artifact register/list/refresh` commands for deliverable tracking
-- [ ] `diligent reconcile` detects stale artifacts by walking the dependency graph against TRUTH.md
-- [ ] `diligent workstream new/list/show` and `diligent task new/list/complete` commands
-- [ ] `diligent ask/answer/questions` commands for open question tracking
-- [ ] `diligent status` provides full state summary across all files
-- [ ] `diligent handoff` generates structured prompt for clean AI session restoration
-- [ ] `diligent install --antigravity/--claude-code` installs SKILL.md files into IDE runtimes
-- [ ] Python helper scripts: fact_parser.py, reconcile_anchors.py, diff_excel_versions.py, extract_text.py, artifact_scanner.py
-- [ ] All commands return in under 2 seconds for typical deal folder; reconcile under 10 seconds
-- [ ] Atomic file writes (write to temp, fsync, rename) for crash safety
-- [ ] No network requests, no API keys, no telemetry
-- [ ] Distributed via PyPI, installed via pipx
+(No active requirements. Define next milestone with `/gsd:new-milestone`.)
 
 ### Out of Scope
 
@@ -46,21 +37,31 @@ When the analyst types one command, they get a definitive answer about what is c
 - VDR, CRM, or accounting system integration.
 - Git orchestration (branching, auto-commit). The analyst manages git themselves.
 - TUI or GUI.
-- Skill packages for runtimes other than Antigravity and Claude Code.
+- Skill packages for runtimes other than Antigravity and Claude Code (v1.0 scope; Cursor/Windsurf deferred to v2).
 
 ## Context
 
-diligent is being built by Bryce Masterson for immediate dogfooding on Project Arrival, a live post-LOI acquisition of OnTime 360 (B2B SaaS courier dispatch, ~$2.4M ARR, ~$9.5M EV). The tool exists because Bryce has hit state drift repeatedly across nine versions of retention analyses, investor decks, and briefing memos. The pain point: when a source document updates, nothing in the current workflow tells the analyst which downstream artifacts are now stale.
+diligent v1.0 shipped 2026-04-09. 17,475 lines of Python across 81 files. 504 tests passing. 70/70 requirements satisfied with 9 tech debt items tracked.
+
+Built by Bryce Masterson for immediate dogfooding on Project Arrival, a live post-LOI acquisition of OnTime 360 (B2B SaaS courier dispatch, ~$2.4M ARR, ~$9.5M EV). The tool exists because Bryce has hit state drift repeatedly across nine versions of retention analyses, investor decks, and briefing memos. The pain point: when a source document updates, nothing in the current workflow tells the analyst which downstream artifacts are now stale.
 
 The design is directly inspired by GSD's structural insight (markdown state files that any agent can read at session start) applied to diligence instead of software engineering. The key difference: in coding, truth is the running code; in diligence, truth is a set of validated quantitative facts about a business that must be cached and traced because there is no "re-run the program."
 
 TRUTH.md is the most important file in the system. Every design decision should be filtered through: "does this serve the discipline of TRUTH.md being the single source of validated facts?"
 
+**Current state:** v1.0 shipped. Package published locally as wheel (`diligent-dd-0.1.0`). PyPI upload pending manual `twine upload`. 17 CLI commands registered. Full state layer for 8 files. Reconcile engine verified at scale (200 sources, 500 facts, 100 artifacts under 10s).
+
+**Known tech debt from v1.0:**
+- doctor/config/migrate don't walk parent directories (inconsistent with 10 other commands)
+- workstream show staleness undercount vs full reconcile engine
+- truth trace --verbose deferred
+- write_state intentionally orphaned
+
 ## Constraints
 
 - **Platform**: Windows primary (OneDrive-synced deal folders), macOS/Linux supported. Python 3.11+.
-- **Distribution**: PyPI under `diligent` (name conflict to resolve). Installed via pipx.
-- **Dependencies**: Minimized. click/typer, pyyaml, openpyxl, python-docx, pypdf/pdfplumber. Optional: rich.
+- **Distribution**: PyPI as `diligent-dd`. Installed via pipx.
+- **Dependencies**: Minimized. click, pyyaml, openpyxl, python-docx, pypdf/pdfplumber. Optional: rich.
 - **License**: BSL 1.1. Individual use free; service-provider use requires commercial license. Converts to Apache 2.0 after 4 years.
 - **Performance**: All commands < 2s, reconcile < 10s, no background processes.
 - **Privacy**: Zero network, zero telemetry, zero credentials. Source documents are read-only.
@@ -70,14 +71,18 @@ TRUTH.md is the most important file in the system. Every design decision should 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| CLI + skill files, not web app or TUI | Must live where the work already lives (IDE terminal). Agent tool-use loop needs CLI semantics. | Pending |
-| Python, not TypeScript or Go | Helper scripts do data work on Excel/Word files; openpyxl/python-docx are de facto standard. User already writes Python. | Pending |
-| Markdown state files, not SQLite | AI agent reads markdown directly into context window. Human-inspectable, git-diffable, grep-able. | Pending |
-| TRUTH.md append-only at entry level | Prevents silent overwrites. Free audit trail. Most common state corruption is losing what a value used to be. | Pending |
-| Source documents never moved or modified | diligent is a metadata layer. User can rip out .diligence/ and lose nothing except state. Safe to test on live deal. | Pending |
-| No AI integration inside diligent | Zero-config, zero-credential, zero-cost, runtime-agnostic. AI is a consumer of state, not a component. | Pending |
-| BSL 1.1 license | Author retains commercial rights. Source-available for inspection. Colleagues get free grants. Converts to Apache 2.0 after 4 years. | Pending |
-| Name: diligent | Working name locked. PyPI conflict to resolve before first publish. | Pending |
+| CLI + skill files, not web app or TUI | Must live where the work already lives (IDE terminal). Agent tool-use loop needs CLI semantics. | Good -- 17 commands, 6 skill files, no UI debt |
+| Python, not TypeScript or Go | Helper scripts do data work on Excel/Word files; openpyxl/python-docx are de facto standard. User already writes Python. | Good -- 17k LOC, all helpers work |
+| Markdown state files, not SQLite | AI agent reads markdown directly into context window. Human-inspectable, git-diffable, grep-able. | Good -- H2+YAML pattern replicated cleanly across 8 files |
+| TRUTH.md append-only at entry level | Prevents silent overwrites. Free audit trail. Most common state corruption is losing what a value used to be. | Good -- supersedes chain works, trace shows full history |
+| Source documents never moved or modified | diligent is a metadata layer. User can rip out .diligence/ and lose nothing except state. Safe to test on live deal. | Good -- read-only confirmed by test and code review |
+| No AI integration inside diligent | Zero-config, zero-credential, zero-cost, runtime-agnostic. AI is a consumer of state, not a component. | Good -- skill files bridge the gap without coupling |
+| BSL 1.1 license | Author retains commercial rights. Source-available for inspection. Colleagues get free grants. Converts to Apache 2.0 after 4 years. | Good -- LICENSE file ships in wheel |
+| PyPI name: diligent-dd | `diligent` was taken on PyPI. CLI entry point remains `diligent`. | Good -- resolved before first publish |
+| H2+YAML parsing replicated per module | Readability over DRY. Each state reader is self-contained. | Good -- 6 independent readers, no shared fragility |
+| Verification gate routes to questions queue | TRUTH-04 rejection writes QuestionEntry with gate context. Connects truth management to question tracking. | Good -- load-bearing behavior, fully tested |
+| reconcile_anchors.py as pure function | Zero I/O imports. Maximum testability. CLI wrapper handles file reads. | Good -- 16 engine tests + 13 CLI tests |
+| Domain-grouped skill files (6) vs one-per-command (14+) | Keeps skill count manageable. Each file covers a coherent domain. | Good -- all commands documented, dd: prefix |
 
 ---
-*Last updated: 2026-04-07 after initialization*
+*Last updated: 2026-04-09 after v1.0 milestone*
