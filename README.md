@@ -28,11 +28,19 @@ Your deal folder stays yours. Source documents are never moved or modified. You 
 
 Requires Python 3.11+.
 
+**From GitHub (recommended for now):**
+
+```
+pip install git+https://github.com/bmasterson1/Diligent.git#subdirectory=Diligent
+```
+
+**From PyPI (when published):**
+
 ```
 pipx install diligent-dd
 ```
 
-Or `pip install diligent-dd`. The CLI command is `diligent`.
+The CLI command is `diligent`.
 
 ## Quickstart
 
