@@ -1,0 +1,37 @@
+# Artifacts
+
+<!-- This file tracks registered deliverable artifacts and their
+     truth key dependencies. Each artifact is an H2 heading with
+     the relative path from the deal folder root, followed by a
+     fenced YAML code block with metadata.
+
+     Format:
+
+     ## deliverables/retention/retention_analysis_v9.docx
+     ```yaml
+     workstream: "retention"
+     registered: "2026-03-22"
+     last_refreshed: "2026-03-22"
+     references:
+       - "customer_253_mrr"
+       - "t12m_cohort"
+       - "t12m_retained"
+       - "ndr_pct"
+     scanner_findings:
+       - "revenue_growth_yoy"
+       - "gross_margin_pct"
+     notes: ""
+     ```
+
+     Fields:
+       workstream    - workstream this artifact belongs to
+       registered    - ISO 8601 date when artifact was first registered
+       last_refreshed - ISO 8601 date of last refresh (artifact regenerated)
+       references    - list of truth keys this artifact depends on
+       scanner_findings - keys found by scanner but not confirmed by analyst
+       notes         - free-text notes
+
+     Paths use forward slashes on all platforms.
+
+     This file is managed by diligent commands. Manual edits are
+     supported but must preserve the H2 + fenced YAML structure. -->
