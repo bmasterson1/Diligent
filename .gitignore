@@ -1,0 +1,20 @@
+# Build planning and internal docs
+.claude/
+.planning/
+PRD/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
