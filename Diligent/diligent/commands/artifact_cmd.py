@@ -203,6 +203,10 @@ def register(ctx, path, references, workstream, notes, confirm_flag, json_mode):
         }, json_mode=True)
     else:
         click.echo(f"Artifact {status}: {normalized}")
+        click.echo(click.style(
+            "Next: run 'diligent reconcile' to verify all artifacts are current.",
+            dim=True,
+        ))
 
 
 def _build_superseded_by_index(sources: SourcesFile) -> dict[str, SourceEntry]:

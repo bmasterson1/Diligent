@@ -174,6 +174,10 @@ def ingest_cmd(path, date_received, parties, workstream, supersedes, notes, json
         output_result(result_data, json_mode=True)
     else:
         click.echo(f"Registered {source_id}: {rel_path}")
+        click.echo(click.style(
+            f"Next: run 'diligent truth set <key> <value> --source {source_id}' to record facts from this document.",
+            dim=True,
+        ))
 
     # Auto-diff on ingest when --supersedes is provided and both files are Excel
     if supersedes:

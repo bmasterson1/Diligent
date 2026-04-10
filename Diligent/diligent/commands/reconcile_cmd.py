@@ -279,6 +279,7 @@ def reconcile_cmd(ctx, workstream, strict, show_all, verbose, json_mode):
             f"{current_count} artifacts current"
         )
         click.echo(summary_line)
+        click.echo(click.style("All clear. No stale artifacts.", dim=True))
         ctx.exit(exit_code)
         return
 
@@ -307,5 +308,10 @@ def reconcile_cmd(ctx, workstream, strict, show_all, verbose, json_mode):
         f"{current_count} artifacts current"
     )
     click.echo(summary_line)
+    if stale_count > 0:
+        click.echo(click.style(
+            "Run 'diligent artifact refresh <path>' after updating each stale artifact.",
+            dim=True,
+        ))
 
     ctx.exit(exit_code)

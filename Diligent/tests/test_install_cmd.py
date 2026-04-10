@@ -15,8 +15,8 @@ def test_install_to_custom_path(mock_which, tmp_path):
 
     assert result.exit_code == 0
     files = list(tmp_path.glob("dd_*.md"))
-    assert len(files) == 6, f"Expected 6 files, got {len(files)}: {files}"
-    assert "Installed 6 skill files" in result.output
+    assert len(files) == 8, f"Expected 8 files, got {len(files)}: {files}"
+    assert "Installed 8 skill files" in result.output
 
 
 @patch("shutil.which", return_value="/usr/local/bin/diligent")
@@ -57,14 +57,14 @@ def test_uninstall_removes_files(mock_which, tmp_path):
     runner = CliRunner()
     # First install
     runner.invoke(cli, ["install", "--path", str(tmp_path)])
-    assert len(list(tmp_path.glob("dd_*.md"))) == 6
+    assert len(list(tmp_path.glob("dd_*.md"))) == 8
 
     # Then uninstall
     result = runner.invoke(
         cli, ["install", "--uninstall", "--path", str(tmp_path)]
     )
     assert result.exit_code == 0
-    assert "Removed 6 skill files" in result.output
+    assert "Removed 8 skill files" in result.output
     assert len(list(tmp_path.glob("dd_*.md"))) == 0
 
 
@@ -98,16 +98,18 @@ def test_install_nonexistent_directory():
 
 
 @patch("shutil.which", return_value="/usr/local/bin/diligent")
-def test_install_file_count_exactly_six(mock_which, tmp_path):
-    """Exactly 6 skill files are written, no more, no less."""
+def test_install_file_count_exactly_eight(mock_which, tmp_path):
+    """Exactly 8 skill files are written, no more, no less."""
     runner = CliRunner()
     runner.invoke(cli, ["install", "--path", str(tmp_path)])
 
     files = sorted(f.name for f in tmp_path.glob("dd_*.md"))
     expected = [
         "dd_artifacts.md",
+        "dd_next.md",
         "dd_questions.md",
         "dd_sources.md",
+        "dd_start.md",
         "dd_status.md",
         "dd_truth.md",
         "dd_workstreams.md",
@@ -126,7 +128,7 @@ def test_install_json_mode(mock_which, tmp_path):
     )
     assert result.exit_code == 0
     data = json.loads(result.output)
-    assert data["count"] == 6
+    assert data["count"] == 8
     assert data["target_dir"] == str(tmp_path)
 
 
@@ -144,4 +146,4 @@ def test_uninstall_json_mode(mock_which, tmp_path):
     )
     assert result.exit_code == 0
     data = json.loads(result.output)
-    assert data["removed"] == 6
+    assert data["removed"] == 8

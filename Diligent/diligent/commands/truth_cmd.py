@@ -266,6 +266,18 @@ def truth_set(ctx, key, value, source, workstream, anchor, confirm_flag,
         }, json_mode=True)
     else:
         click.echo(f"Fact {status}: {key} = {value} (source: {source})")
+        if status == "updated":
+            try:
+                from diligent.state.artifacts import read_artifacts
+                artifacts = read_artifacts(diligence / "ARTIFACTS.md")
+                n = sum(1 for a in artifacts.artifacts if key in a.references)
+                if n > 0:
+                    click.echo(click.style(
+                        f"Note: {n} artifact(s) may now be stale. Run 'diligent reconcile' to check.",
+                        dim=True,
+                    ))
+            except FileNotFoundError:
+                pass
 
 
 @truth_cmd.command("get")

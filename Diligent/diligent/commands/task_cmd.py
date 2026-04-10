@@ -324,3 +324,7 @@ def task_complete(ctx, workstream, task_id, json_mode):
         }, json_mode=True)
     else:
         click.echo(f"Completed task {task_id} in {workstream}.")
+        click.echo(click.style(
+            f"Next: run 'diligent reconcile --workstream {workstream}' to verify task outputs.",
+            dim=True,
+        ))

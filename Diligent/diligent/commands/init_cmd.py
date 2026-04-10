@@ -342,3 +342,7 @@ def init_cmd(code, target_legal, target_common, stage, loi_date, principal,
         click.echo(f"Initialized .diligence/ for {code} ({target_common})")
         for f in files_created:
             click.echo(f"  {f}")
+        click.echo(click.style(
+            "Next: run 'diligent ingest <file>' to register your source documents.",
+            dim=True,
+        ))
